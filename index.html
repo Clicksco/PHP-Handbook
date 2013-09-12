@@ -1,2130 +1,362 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript">
-        (function () {
-            (function () {
-                function d(a) {
-                    this.t = {};
-                    this.tick = function (a, b, c) {
-                        this.t[a] = [void 0 != c ? c : (new Date).getTime(), b]
-                    };
-                    this.tick("start", null, a)
-                }
+    <title>Clicksco PHP Best Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-                var a = new d;
-                window.jstiming = {Timer: d, load: a};
-                if (window.performance && window.performance.timing) {
-                    var a = window.performance.timing, b = window.jstiming.load, c = a.navigationStart, a = a.responseStart;
-                    0 < c && a >= c && (b.tick("_wtsrt", void 0, c), b.tick("wtsrt_", "_wtsrt", a), b.tick("tbsd_", "wtsrt_"))
-                }
-                try {
-                    a = null, window.chrome && window.chrome.csi && (a = Math.floor(window.chrome.csi().pageT),
-                            b && 0 < c && (b.tick("_tbnd", void 0, window.chrome.csi().startE), b.tick("tbnd_", "_tbnd", c))), null == a && window.gtbExternal && (a = window.gtbExternal.pageT()), null == a && window.external && (a = window.external.pageT, b && 0 < c && (b.tick("_tbnd", void 0, window.external.startE), b.tick("tbnd_", "_tbnd", c))), a && (window.jstiming.pt = a)
-                } catch (e) {
-                }
-            })();
-        })()
-    </script>
-    <script type="text/javascript">var KX_timer = new window.jstiming.Timer();
-    KX_timer.name = 'published';</script>
-    <title>Clicksco PHP</title>
     <style type="text/css">
         body {
-            font-family: arial, sans, sans-serif;
-            margin: 0;
-        }
-
-        iframe {
-            border: 0;
-            frameborder: 0;
-            height: 100%;
-            width: 100%;
-        }
-
-        #header, #footer {
-            background: #f0f0f0;
-            padding: 10px 10px;
-        }
-
-        #header {
-            border-bottom: 1px #ccc solid;
-        }
-
-        #footer {
-            border-top: 1px #ccc solid;
-            border-bottom: 1px #ccc solid;
-            font-size: 13;
-        }
-
-        #contents {
-            margin: 6px;
-        }
-
-        .dash {
-            padding: 0 6px;
+            padding-top: 40px;
         }
     </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-<div id="header">Clicksco PHP</div>
-<div id="contents">
-    <style type="text/css">ol.lst-kix_nyggf21ab0y1-7.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-7 0
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-4.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-4 0
-    }
-
-    .lst-kix_21bqglr1zug8-6>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-6, decimal) ". "
-    }
-
-    .lst-kix_x37ieq5j2zn7-1>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-1
-    }
-
-    ol.lst-kix_yxp5xf4njckb-4.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-4 0
-    }
-
-    .lst-kix_x37ieq5j2zn7-4>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-4, lower-latin) ". "
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-3.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-3 0
-    }
-
-    ol.lst-kix_nyggf21ab0y1-1.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-1 0
-    }
-
-    .lst-kix_jbcskiwnvkos-2>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-2.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-2 0
-    }
-
-    .lst-kix_9b094ovdwyv-4>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-4
-    }
-
-    .lst-kix_jbcskiwnvkos-6>li:before {
-        content: "\0025cf  "
-    }
-
-    .lst-kix_bmkxp7ri40zl-0>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-0, decimal) ". "
-    }
-
-    .lst-kix_wj0nka2vlclz-7>li:before {
-        content: "\0025cb  "
-    }
-
-    ol.lst-kix_21bqglr1zug8-0.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-0 0
-    }
-
-    .lst-kix_x37ieq5j2zn7-5>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-5
-    }
-
-    .lst-kix_bd9tk94dnefy-8>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_eum94uhqqrhe-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_eum94uhqqrhe-2 {
-        list-style-type: none
-    }
-
-    .lst-kix_9b094ovdwyv-8>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-8, lower-roman) ". "
-    }
-
-    .lst-kix_d37mv0scnexl-6>li:before {
-        content: "\0025cf  "
-    }
-
-    ol.lst-kix_eum94uhqqrhe-0 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_d37mv0scnexl-0 {
-        list-style-type: none
-    }
-
-    .lst-kix_21bqglr1zug8-2>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-2
-    }
-
-    ol.lst-kix_eum94uhqqrhe-4 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_eum94uhqqrhe-3 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_d37mv0scnexl-2 {
-        list-style-type: none
-    }
-
-    .lst-kix_jbcskiwnvkos-3>li:before {
-        content: "\0025cf  "
-    }
-
-    ol.lst-kix_eum94uhqqrhe-6 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_d37mv0scnexl-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_eum94uhqqrhe-5 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_d37mv0scnexl-4 {
-        list-style-type: none
-    }
-
-    .lst-kix_77ho0h5n3t8d-0>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-0, decimal) ". "
-    }
-
-    ol.lst-kix_eum94uhqqrhe-8 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_d37mv0scnexl-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_eum94uhqqrhe-7 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_d37mv0scnexl-6 {
-        list-style-type: none
-    }
-
-    .lst-kix_x37ieq5j2zn7-7>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-7
-    }
-
-    ul.lst-kix_d37mv0scnexl-5 {
-        list-style-type: none
-    }
-
-    .lst-kix_21bqglr1zug8-4>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-4, lower-latin) ". "
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-7.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-7 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-5.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-5 0
-    }
-
-    .lst-kix_9b094ovdwyv-1>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-1, lower-latin) ". "
-    }
-
-    ol.lst-kix_yxp5xf4njckb-3.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-3 0
-    }
-
-    ol.lst-kix_eum94uhqqrhe-2.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-2 0
-    }
-
-    .lst-kix_yxp5xf4njckb-4>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-4, lower-latin) ". "
-    }
-
-    ol.lst-kix_eum94uhqqrhe-0.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-0 0
-    }
-
-    .lst-kix_77ho0h5n3t8d-6>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-6
-    }
-
-    ol.lst-kix_9b094ovdwyv-1.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-1 0
-    }
-
-    ol.lst-kix_nyggf21ab0y1-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-2 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-4 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-6 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-7 {
-        list-style-type: none
-    }
-
-    .lst-kix_77ho0h5n3t8d-8>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-8, lower-roman) ". "
-    }
-
-    ol.lst-kix_nyggf21ab0y1-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_yxp5xf4njckb-6>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-6
-    }
-
-    .lst-kix_bd9tk94dnefy-6>li:before {
-        content: "\0025cf  "
-    }
-
-    .lst-kix_yxp5xf4njckb-6>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-6, decimal) ". "
-    }
-
-    .lst-kix_21bqglr1zug8-7>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-7
-    }
-
-    .lst-kix_x37ieq5j2zn7-8>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-8, lower-roman) ". "
-    }
-
-    ol.lst-kix_nyggf21ab0y1-0.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-0 0
-    }
-
-    .lst-kix_nyggf21ab0y1-1>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-1
-    }
-
-    .lst-kix_yxp5xf4njckb-0>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-0, decimal) ". "
-    }
-
-    .lst-kix_bd9tk94dnefy-0>li:before {
-        content: "\0025a0  "
-    }
-
-    .lst-kix_bd9tk94dnefy-2>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_21bqglr1zug8-6.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-6 0
-    }
-
-    .lst-kix_9b094ovdwyv-3>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-3, decimal) ". "
-    }
-
-    .lst-kix_x37ieq5j2zn7-6>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-6, decimal) ". "
-    }
-
-    .lst-kix_yxp5xf4njckb-8>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-8
-    }
-
-    .lst-kix_yxp5xf4njckb-3>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-3
-    }
-
-    .lst-kix_d37mv0scnexl-4>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_yxp5xf4njckb-8>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-8, lower-roman) ". "
-    }
-
-    .lst-kix_eum94uhqqrhe-4>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-4, lower-latin) ". "
-    }
-
-    ul.lst-kix_d37mv0scnexl-7 {
-        list-style-type: none
-    }
-
-    .lst-kix_yxp5xf4njckb-2>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-2
-    }
-
-    ul.lst-kix_d37mv0scnexl-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_21bqglr1zug8-4>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-4
-    }
-
-    .lst-kix_bmkxp7ri40zl-5>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-5, lower-roman) ". "
-    }
-
-    .lst-kix_bmkxp7ri40zl-6>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-6, decimal) ". "
-    }
-
-    ol.lst-kix_9b094ovdwyv-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-2.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-2 0
-    }
-
-    ol.lst-kix_9b094ovdwyv-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-1.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-1 0
-    }
-
-    ol.lst-kix_9b094ovdwyv-2 {
-        list-style-type: none
-    }
-
-    .lst-kix_21bqglr1zug8-0>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-0, decimal) ". "
-    }
-
-    ol.lst-kix_9b094ovdwyv-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_9b094ovdwyv-4 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_9b094ovdwyv-5 {
-        list-style-type: none
-    }
-
-    .lst-kix_bmkxp7ri40zl-2>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-2, lower-roman) ". "
-    }
-
-    ol.lst-kix_9b094ovdwyv-6 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_9b094ovdwyv-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-8.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-8 0
-    }
-
-    ol.lst-kix_9b094ovdwyv-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_9b094ovdwyv-7>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-7
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-2.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-2 0
-    }
-
-    .lst-kix_bd9tk94dnefy-3>li:before {
-        content: "\0025cf  "
-    }
-
-    .lst-kix_jbcskiwnvkos-1>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_77ho0h5n3t8d-5>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-5
-    }
-
-    .lst-kix_21bqglr1zug8-0>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-0
-    }
-
-    .lst-kix_bd9tk94dnefy-5>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-4.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-4 0
-    }
-
-    .lst-kix_77ho0h5n3t8d-1>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-1, lower-latin) ". "
-    }
-
-    ul.lst-kix_jbcskiwnvkos-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_eum94uhqqrhe-5>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-5
-    }
-
-    .lst-kix_wj0nka2vlclz-5>li:before {
-        content: "\0025a0  "
-    }
-
-    ul.lst-kix_jbcskiwnvkos-7 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_jbcskiwnvkos-6 {
-        list-style-type: none
-    }
-
-    .lst-kix_nyggf21ab0y1-3>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-3
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-2.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-2 0
-    }
-
-    ul.lst-kix_jbcskiwnvkos-5 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_jbcskiwnvkos-4 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_jbcskiwnvkos-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_nyggf21ab0y1-4.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-4 0
-    }
-
-    ul.lst-kix_jbcskiwnvkos-2 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_jbcskiwnvkos-1 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_jbcskiwnvkos-0 {
-        list-style-type: none
-    }
-
-    .lst-kix_d37mv0scnexl-7>li:before {
-        content: "\0025cb  "
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-1.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-1 0
-    }
-
-    .lst-kix_nyggf21ab0y1-7>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-7, lower-latin) ". "
-    }
-
-    .lst-kix_yxp5xf4njckb-4>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-4
-    }
-
-    .lst-kix_21bqglr1zug8-2>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-2, lower-roman) ". "
-    }
-
-    ol.lst-kix_21bqglr1zug8-3.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-3 0
-    }
-
-    .lst-kix_x37ieq5j2zn7-2>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-2, lower-roman) ". "
-    }
-
-    .lst-kix_eum94uhqqrhe-2>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-2, lower-roman) ". "
-    }
-
-    .lst-kix_jbcskiwnvkos-4>li:before {
-        content: "\0025cb  "
-    }
-
-    ol.lst-kix_9b094ovdwyv-6.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-6 0
-    }
-
-    .lst-kix_nyggf21ab0y1-5>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-5, lower-roman) ". "
-    }
-
-    .lst-kix_eum94uhqqrhe-4>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-4
-    }
-
-    .lst-kix_yxp5xf4njckb-2>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-2, lower-roman) ". "
-    }
-
-    .lst-kix_eum94uhqqrhe-8>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-8, lower-roman) ". "
-    }
-
-    .lst-kix_d37mv0scnexl-2>li:before {
-        content: "\0025a0  "
-    }
-
-    .lst-kix_nyggf21ab0y1-3>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-3, decimal) ". "
-    }
-
-    .lst-kix_wj0nka2vlclz-8>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_yxp5xf4njckb-5.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-5 0
-    }
-
-    .lst-kix_d37mv0scnexl-0>li:before {
-        content: "\0025cf  "
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-8.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-8 0
-    }
-
-    .lst-kix_jbcskiwnvkos-5>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-0 {
-        list-style-type: none
-    }
-
-    .lst-kix_77ho0h5n3t8d-3>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-3, decimal) ". "
-    }
-
-    .lst-kix_21bqglr1zug8-6>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-6
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-6.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-6 0
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-2 {
-        list-style-type: none
-    }
-
-    .lst-kix_77ho0h5n3t8d-7>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-7, lower-latin) ". "
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-6 {
-        list-style-type: none
-    }
-
-    .lst-kix_jbcskiwnvkos-0>li:before {
-        content: "\0025cf  "
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-4 {
-        list-style-type: none
-    }
-
-    .lst-kix_bmkxp7ri40zl-3>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-3
-    }
-
-    ol.lst-kix_eum94uhqqrhe-1.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-1 0
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_wj0nka2vlclz-3>li:before {
-        content: "\0025cf  "
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-7 {
-        list-style-type: none
-    }
-
-    .lst-kix_yxp5xf4njckb-5>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-5
-    }
-
-    .lst-kix_bd9tk94dnefy-7>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_nyggf21ab0y1-4>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-4, lower-latin) ". "
-    }
-
-    .lst-kix_nyggf21ab0y1-5>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-5
-    }
-
-    .lst-kix_21bqglr1zug8-1>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-1, lower-latin) ". "
-    }
-
-    .lst-kix_9b094ovdwyv-4>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-4, lower-latin) ". "
-    }
-
-    ul.lst-kix_bd9tk94dnefy-4 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_bd9tk94dnefy-5 {
-        list-style-type: none
-    }
-
-    .lst-kix_21bqglr1zug8-5>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-5, lower-roman) ". "
-    }
-
-    ul.lst-kix_bd9tk94dnefy-6 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_bd9tk94dnefy-7 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_bd9tk94dnefy-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_bmkxp7ri40zl-5>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-5
-    }
-
-    .lst-kix_nyggf21ab0y1-6>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-6
-    }
-
-    .lst-kix_77ho0h5n3t8d-7>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-7
-    }
-
-    .lst-kix_x37ieq5j2zn7-5>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-5, lower-roman) ". "
-    }
-
-    .lst-kix_bmkxp7ri40zl-8>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-8
-    }
-
-    ul.lst-kix_bd9tk94dnefy-0 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_bd9tk94dnefy-1 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_bd9tk94dnefy-2 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_bd9tk94dnefy-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_9b094ovdwyv-3.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-3 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_21bqglr1zug8-6 {
-        list-style-type: none
-    }
-
-    .lst-kix_yxp5xf4njckb-7>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-7
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-7.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-7 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-6.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-6 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_77ho0h5n3t8d-3>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-3
-    }
-
-    ol.lst-kix_21bqglr1zug8-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_21bqglr1zug8-2 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_21bqglr1zug8-3 {
-        list-style-type: none
-    }
-
-    .lst-kix_wj0nka2vlclz-1>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_x37ieq5j2zn7-8>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-8
-    }
-
-    ol.lst-kix_21bqglr1zug8-4 {
-        list-style-type: none
-    }
-
-    .lst-kix_bmkxp7ri40zl-7>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-7
-    }
-
-    ol.lst-kix_nyggf21ab0y1-5.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-5 0
-    }
-
-    .lst-kix_eum94uhqqrhe-0>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-0
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-3.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-3 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-0 {
-        list-style-type: none
-    }
-
-    .lst-kix_eum94uhqqrhe-2>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-2
-    }
-
-    .lst-kix_nyggf21ab0y1-0>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-0
-    }
-
-    .lst-kix_bmkxp7ri40zl-7>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-7, lower-latin) ". "
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-4.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-4 0
-    }
-
-    .lst-kix_9b094ovdwyv-3>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-3
-    }
-
-    .lst-kix_bmkxp7ri40zl-1>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-1, lower-latin) ". "
-    }
-
-    .lst-kix_bd9tk94dnefy-1>li:before {
-        content: "\0025cb  "
-    }
-
-    ol.lst-kix_9b094ovdwyv-8.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-8 0
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-3.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-3 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-7.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-7 0
-    }
-
-    ol.lst-kix_nyggf21ab0y1-3.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-3 0
-    }
-
-    ol.lst-kix_eum94uhqqrhe-6.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-6 0
-    }
-
-    .lst-kix_77ho0h5n3t8d-8>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-8
-    }
-
-    .lst-kix_x37ieq5j2zn7-0>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-0
-    }
-
-    ol.lst-kix_eum94uhqqrhe-7.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-7 0
-    }
-
-    .lst-kix_x37ieq5j2zn7-1>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-1, lower-latin) ". "
-    }
-
-    .lst-kix_nyggf21ab0y1-2>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-2, lower-roman) ". "
-    }
-
-    .lst-kix_eum94uhqqrhe-1>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-1
-    }
-
-    .lst-kix_nyggf21ab0y1-4>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-4
-    }
-
-    .lst-kix_9b094ovdwyv-5>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-5
-    }
-
-    .lst-kix_wj0nka2vlclz-6>li:before {
-        content: "\0025cf  "
-    }
-
-    .lst-kix_nyggf21ab0y1-8>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-8, lower-roman) ". "
-    }
-
-    .lst-kix_yxp5xf4njckb-5>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-5, lower-roman) ". "
-    }
-
-    ol.lst-kix_eum94uhqqrhe-5.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-5 0
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-0.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-0 0
-    }
-
-    .lst-kix_9b094ovdwyv-6>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-6, decimal) ". "
-    }
-
-    .lst-kix_77ho0h5n3t8d-6>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-6, decimal) ". "
-    }
-
-    .lst-kix_9b094ovdwyv-8>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-8
-    }
-
-    .lst-kix_77ho0h5n3t8d-4>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-4, lower-latin) ". "
-    }
-
-    .lst-kix_77ho0h5n3t8d-2>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-2, lower-roman) ". "
-    }
-
-    .lst-kix_nyggf21ab0y1-0>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-0, decimal) ". "
-    }
-
-    ul.lst-kix_wj0nka2vlclz-2 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_wj0nka2vlclz-1 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_wj0nka2vlclz-4 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_21bqglr1zug8-4.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-4 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-8.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-8 0
-    }
-
-    ul.lst-kix_wj0nka2vlclz-3 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_wj0nka2vlclz-6 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_wj0nka2vlclz-5 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_wj0nka2vlclz-8 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_wj0nka2vlclz-7 {
-        list-style-type: none
-    }
-
-    .lst-kix_9b094ovdwyv-5>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-5, lower-roman) ". "
-    }
-
-    ol.lst-kix_9b094ovdwyv-0.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-0 0
-    }
-
-    .lst-kix_77ho0h5n3t8d-5>li:before {
-        content: "" counter(lst-ctn-kix_77ho0h5n3t8d-5, lower-roman) ". "
-    }
-
-    .lst-kix_x37ieq5j2zn7-7>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-7, lower-latin) ". "
-    }
-
-    .lst-kix_bmkxp7ri40zl-3>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-3, decimal) ". "
-    }
-
-    ol.lst-kix_9b094ovdwyv-5.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-5 0
-    }
-
-    ol.lst-kix_yxp5xf4njckb-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-2 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-4 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-2 {
-        list-style-type: none
-    }
-
-    .lst-kix_eum94uhqqrhe-6>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-6, decimal) ". "
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-8 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-6 {
-        list-style-type: none
-    }
-
-    .lst-kix_eum94uhqqrhe-6>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-6
-    }
-
-    ol.lst-kix_yxp5xf4njckb-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-8 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-6 {
-        list-style-type: none
-    }
-
-    .lst-kix_9b094ovdwyv-6>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-6
-    }
-
-    ol.lst-kix_yxp5xf4njckb-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-4 {
-        list-style-type: none
-    }
-
-    ul.lst-kix_wj0nka2vlclz-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-1.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-1 0
-    }
-
-    .lst-kix_21bqglr1zug8-3>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-3
-    }
-
-    .lst-kix_bmkxp7ri40zl-6>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-6
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-5.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-5 0
-    }
-
-    .lst-kix_77ho0h5n3t8d-2>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-2
-    }
-
-    .lst-kix_nyggf21ab0y1-8>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-8
-    }
-
-    ol.lst-kix_yxp5xf4njckb-6.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-6 0
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-1 {
-        list-style-type: none
-    }
-
-    .lst-kix_eum94uhqqrhe-1>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-1, lower-latin) ". "
-    }
-
-    .lst-kix_9b094ovdwyv-1>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-1
-    }
-
-    .lst-kix_9b094ovdwyv-2>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-2, lower-roman) ". "
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-1.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-1 0
-    }
-
-    ol.lst-kix_21bqglr1zug8-2.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-2 0
-    }
-
-    .lst-kix_x37ieq5j2zn7-3>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-3, decimal) ". "
-    }
-
-    ol.lst-kix_21bqglr1zug8-1.start {
-        counter-reset: lst-ctn-kix_21bqglr1zug8-1 0
-    }
-
-    .lst-kix_bmkxp7ri40zl-4>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-4
-    }
-
-    .lst-kix_bmkxp7ri40zl-1>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-1
-    }
-
-    .lst-kix_9b094ovdwyv-2>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-2
-    }
-
-    .lst-kix_yxp5xf4njckb-3>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-3, decimal) ". "
-    }
-
-    .lst-kix_d37mv0scnexl-1>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_eum94uhqqrhe-3>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-3, decimal) ". "
-    }
-
-    .lst-kix_yxp5xf4njckb-1>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-1, lower-latin) ". "
-    }
-
-    .lst-kix_77ho0h5n3t8d-0>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-0
-    }
-
-    .lst-kix_nyggf21ab0y1-6>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-6, decimal) ". "
-    }
-
-    .lst-kix_jbcskiwnvkos-7>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_21bqglr1zug8-5>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-5
-    }
-
-    .lst-kix_wj0nka2vlclz-4>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_yxp5xf4njckb-7>li:before {
-        content: "" counter(lst-ctn-kix_yxp5xf4njckb-7, lower-latin) ". "
-    }
-
-    .lst-kix_9b094ovdwyv-0>li {
-        counter-increment: lst-ctn-kix_9b094ovdwyv-0
-    }
-
-    .lst-kix_x37ieq5j2zn7-3>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-3
-    }
-
-    .lst-kix_77ho0h5n3t8d-1>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-1
-    }
-
-    .lst-kix_x37ieq5j2zn7-6>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-6
-    }
-
-    .lst-kix_nyggf21ab0y1-7>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-7
-    }
-
-    .lst-kix_bmkxp7ri40zl-8>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-8, lower-roman) ". "
-    }
-
-    ol.lst-kix_9b094ovdwyv-2.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-2 0
-    }
-
-    ol.lst-kix_yxp5xf4njckb-8.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-8 0
-    }
-
-    .lst-kix_eum94uhqqrhe-0>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-0, decimal) ". "
-    }
-
-    .lst-kix_x37ieq5j2zn7-4>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-4
-    }
-
-    ol.lst-kix_eum94uhqqrhe-4.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-4 0
-    }
-
-    .lst-kix_eum94uhqqrhe-7>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-7
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-5.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-5 0
-    }
-
-    ol.lst-kix_77ho0h5n3t8d-6.start {
-        counter-reset: lst-ctn-kix_77ho0h5n3t8d-6 0
-    }
-
-    ol.lst-kix_eum94uhqqrhe-3.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-3 0
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-6 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-7 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-4 {
-        list-style-type: none
-    }
-
-    .lst-kix_nyggf21ab0y1-1>li:before {
-        content: "" counter(lst-ctn-kix_nyggf21ab0y1-1, lower-latin) ". "
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-5 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-2 {
-        list-style-type: none
-    }
-
-    .lst-kix_yxp5xf4njckb-0>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-0
-    }
-
-    .lst-kix_bmkxp7ri40zl-4>li:before {
-        content: "" counter(lst-ctn-kix_bmkxp7ri40zl-4, lower-latin) ". "
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-3 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-0 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-1 {
-        list-style-type: none
-    }
-
-    ol.lst-kix_yxp5xf4njckb-2.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-2 0
-    }
-
-    .lst-kix_bmkxp7ri40zl-2>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-2
-    }
-
-    .lst-kix_x37ieq5j2zn7-2>li {
-        counter-increment: lst-ctn-kix_x37ieq5j2zn7-2
-    }
-
-    .lst-kix_d37mv0scnexl-5>li:before {
-        content: "\0025a0  "
-    }
-
-    .lst-kix_77ho0h5n3t8d-4>li {
-        counter-increment: lst-ctn-kix_77ho0h5n3t8d-4
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-8.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-8 0
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-8 {
-        list-style-type: none
-    }
-
-    .lst-kix_9b094ovdwyv-7>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-7, lower-latin) ". "
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-5.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-5 0
-    }
-
-    ol.lst-kix_nyggf21ab0y1-8.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-8 0
-    }
-
-    ol.lst-kix_9b094ovdwyv-7.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-7 0
-    }
-
-    .lst-kix_nyggf21ab0y1-2>li {
-        counter-increment: lst-ctn-kix_nyggf21ab0y1-2
-    }
-
-    .lst-kix_21bqglr1zug8-3>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-3, decimal) ". "
-    }
-
-    .lst-kix_9b094ovdwyv-0>li:before {
-        content: "" counter(lst-ctn-kix_9b094ovdwyv-0, decimal) ". "
-    }
-
-    ol.lst-kix_x37ieq5j2zn7-0.start {
-        counter-reset: lst-ctn-kix_x37ieq5j2zn7-0 0
-    }
-
-    .lst-kix_21bqglr1zug8-7>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-7, lower-latin) ". "
-    }
-
-    .lst-kix_x37ieq5j2zn7-0>li:before {
-        content: "" counter(lst-ctn-kix_x37ieq5j2zn7-0, decimal) ". "
-    }
-
-    .lst-kix_d37mv0scnexl-3>li:before {
-        content: "\0025cf  "
-    }
-
-    .lst-kix_eum94uhqqrhe-7>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-7, lower-latin) ". "
-    }
-
-    .lst-kix_eum94uhqqrhe-5>li:before {
-        content: "" counter(lst-ctn-kix_eum94uhqqrhe-5, lower-roman) ". "
-    }
-
-    .lst-kix_yxp5xf4njckb-1>li {
-        counter-increment: lst-ctn-kix_yxp5xf4njckb-1
-    }
-
-    .lst-kix_eum94uhqqrhe-3>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-3
-    }
-
-    ol.lst-kix_eum94uhqqrhe-8.start {
-        counter-reset: lst-ctn-kix_eum94uhqqrhe-8 0
-    }
-
-    .lst-kix_bd9tk94dnefy-4>li:before {
-        content: "\0025cb  "
-    }
-
-    .lst-kix_bmkxp7ri40zl-0>li {
-        counter-increment: lst-ctn-kix_bmkxp7ri40zl-0
-    }
-
-    .lst-kix_21bqglr1zug8-8>li:before {
-        content: "" counter(lst-ctn-kix_21bqglr1zug8-8, lower-roman) ". "
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-0.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-0 0
-    }
-
-    .lst-kix_21bqglr1zug8-8>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-8
-    }
-
-    ol.lst-kix_bmkxp7ri40zl-7.start {
-        counter-reset: lst-ctn-kix_bmkxp7ri40zl-7 0
-    }
-
-    .lst-kix_wj0nka2vlclz-2>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_nyggf21ab0y1-6.start {
-        counter-reset: lst-ctn-kix_nyggf21ab0y1-6 0
-    }
-
-    .lst-kix_eum94uhqqrhe-8>li {
-        counter-increment: lst-ctn-kix_eum94uhqqrhe-8
-    }
-
-    ol.lst-kix_yxp5xf4njckb-0.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-0 0
-    }
-
-    ol.lst-kix_yxp5xf4njckb-7.start {
-        counter-reset: lst-ctn-kix_yxp5xf4njckb-7 0
-    }
-
-    .lst-kix_d37mv0scnexl-8>li:before {
-        content: "\0025a0  "
-    }
-
-    .lst-kix_jbcskiwnvkos-8>li:before {
-        content: "\0025a0  "
-    }
-
-    ol.lst-kix_9b094ovdwyv-4.start {
-        counter-reset: lst-ctn-kix_9b094ovdwyv-4 0
-    }
-
-    .lst-kix_21bqglr1zug8-1>li {
-        counter-increment: lst-ctn-kix_21bqglr1zug8-1
-    }
-
-    .lst-kix_wj0nka2vlclz-0>li:before {
-        content: "\0025cf  "
-    }
-
-    ol {
-        margin: 0;
-        padding: 0
-    }
-
-    .c7 {
-        margin: 0;
-        padding: 0
-    }
-
-    .c1 {
-        color: inherit;
-        text-decoration: inherit
-    }
-
-    .c3 {
-        color: #1155cc;
-        text-decoration: underline
-    }
-
-    .c2 {
-        padding-left: 0pt;
-        margin-left: 36pt
-    }
-
-    .c12 {
-        max-width: 468pt;
-        padding: 72pt 72pt 72pt 72pt
-    }
-
-    .c13 {
-        color: #1c5c76;
-        text-decoration: underline
-    }
-
-    .c6 {
-        line-height: 1.3636363636363635
-    }
-
-    .c8 {
-        height: 16pt
-    }
-
-    .c11 {
-        background-color: #ffffff
-    }
-
-    .c14 {
-        line-height: 1.2954545454545454
-    }
-
-    .c9 {
-        color: #333333
-    }
-
-    .c4 {
-        height: 11pt
-    }
-
-    .c10 {
-        margin-left: 36pt
-    }
-
-    .c5 {
-        margin-left: 18pt
-    }
-
-    .c0 {
-        direction: ltr
-    }
-
-    .title {
-        padding-top: 0pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #000000;
-        font-size: 21pt;
-        font-family: "Trebuchet MS";
-        padding-bottom: 0pt
-    }
-
-    .subtitle {
-        padding-top: 0pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #666666;
-        font-style: italic;
-        font-size: 13pt;
-        font-family: "Trebuchet MS";
-        padding-bottom: 10pt
-    }
-
-    li {
-        color: #000000;
-        font-size: 11pt;
-        font-family: "Arial"
-    }
-
-    p {
-        color: #000000;
-        font-size: 11pt;
-        margin: 0;
-        font-family: "Arial"
-    }
-
-    h1 {
-        padding-top: 10pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #000000;
-        font-size: 16pt;
-        font-family: "Trebuchet MS";
-        padding-bottom: 0pt
-    }
-
-    h2 {
-        padding-top: 10pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #000000;
-        font-size: 13pt;
-        font-family: "Trebuchet MS";
-        font-weight: bold;
-        padding-bottom: 0pt
-    }
-
-    h3 {
-        padding-top: 8pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #666666;
-        font-size: 12pt;
-        font-family: "Trebuchet MS";
-        font-weight: bold;
-        padding-bottom: 0pt
-    }
-
-    h4 {
-        padding-top: 8pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #666666;
-        font-size: 11pt;
-        text-decoration: underline;
-        font-family: "Trebuchet MS";
-        padding-bottom: 0pt
-    }
-
-    h5 {
-        padding-top: 8pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #666666;
-        font-size: 11pt;
-        font-family: "Trebuchet MS";
-        padding-bottom: 0pt
-    }
-
-    h6 {
-        padding-top: 8pt;
-        line-height: 1.15;
-        text-align: left;
-        color: #666666;
-        font-style: italic;
-        font-size: 11pt;
-        font-family: "Trebuchet MS";
-        padding-bottom: 0pt
-    }</style>
-    <p class="c0 title"><a name="h.3tcxi2vzhwv5"></a><span>PHP &amp; Clicksco </span></p>
-
-    <p class="c0"><span>Trying to pull PHP developers together to work using the same tools and the same way is not the easiest task however we believe that ensuring that having some best-practice and basic  principles in place will play a big part in both team and personal development.</span>
-    </p>
 
-    <p class="c4 c0"><span></span></p>
+<div class="container">
+
+
+    <div class="row">
 
-    <p class="c0"><span>A great start and a day-to-day refernce should be </span><span class="c3"><a class="c1"
-                                                                                                     href="http://www.phptherightway.com/">PHP
-        The Right Way</a></span><span> and of course </span><span class="c3"><a class="c1"
-                                                                                href="http://php.net">php.net</a></span>
-    </p>
 
-    <p class="c4 c0"><span></span></p>
+        <div class="col-md-3">
 
-    <p class="c4 c0"><span></span></p>
+            <div data-spy="affix" data-offset-top="1">
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.f1jx2bq903ch">The Team</a></span></p>
+                <img class="logo" src="img/logo.png" alt="" width="250px"/>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.v5vba7yfhq06">Team Communication</a></span></p>
+                <hr />
+
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="">The Team</a></li>
+                    <li><a href="">Version Control</a></li>
+                    <li><a href="">Project Management</a></li>
+                    <li><a href="">Frameworks</a></li>
+                    <li><a href="">Editors</a></li>
+                    <li><a href="">Coding Style</a></li>
+                    <li><a href="">Local Development</a></li>
+                    <li><a href="">Continuous Integration</a></li>
+                    <li><a href="">Documentation</a></li>
+                    <li><a href="">Behaviour Driven Development</a></li>
+                    <li><a href="">Useful Links & Tools</a></li>
+                </ul>
+            </div>
+        </div>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.1fvgz18ivnxj">Version Control</a></span></p>
+        <div class="col-md-9">
 
-    <p class="c0 c10"><span class="c3"><a class="c1" href="#h.hk8vl3xakbaz">Workflow</a></span></p>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>PHP Best Practice</h1>
+                    <p>
+                        Trying to pull PHP developers together to work using the same tools and the same way is not the easiest task however we believe that ensuring that having some best-practice and basic principles in place will play a big part in both team and personal development.
+                    </p>
+                </div>
+            </div>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.l2s1esggcjb3">Project Management</a></span></p>
+            <!-- Team ------------------------------------------------------------------------------------------------>
+            <div class="page-header">
+                <h1>The Team</h1>
+            </div>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.7s3gkj7fe6f3">Basecamp</a></span></p>
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#">Team Members</a></li>
+                <li><a href="#">Team Communication</a></li>
+            </ul>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.x75w4vljm71">Codebase</a></span></p>
+            <h2>Team Members</h2>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.hl3p6tbrfue5">Pivotal Tracker</a></span></p>
+            <p>
+                The below list is a quick list of the Clicksco PHP team. Clicking on a name will take you to the official Tech Team Whoâ€™s Who page on the Clickso company wiki.
+                UK
+                Alistair Austen
+                Andrew Nicholson
+                Jon Park
+                Rick Trotter - Lead Developer CRM
+                Paul Taylor - Junior Developer CRM
+                Dubai
+                James Mills - Lead Developer LiveLocal/Click2Call
+                France
+                Philippe Jausions - Lead Developer Click.net
+                Russia
+                Ruslan Kazantsev - ClickscoControl
+                Viacheslav Epifanov aka Slava - ClickscoControl
+                Alexander Trunov aka Sasha - ClickscoControl
+                Dmitrii Shumkov aka Dima - ClickscoControl
+            </p>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.yq2ged8axuzf">Frameworks</a></span></p>
+            <h2>Communication</h2>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.e6amxxqbt069">Laravel</a></span></p>
+            <ul>
+                <li>Campfire - We have a PHP room in the company Campfire account. Daily chat.</li>
+                <li>Basecamp - We have a Clicksco PHP project to discuss all things PHP related</li>
+                <li>Skype - Although it is encouraged that all communication is made though Campfire or Basecamp from time to time you may need to speak with members of the team directly.</li>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.6a6o2bqavilc">Symfony</a></span></p>
+            </ul>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.30mcd5tp80sk">Editors</a></span></p>
+            <!-- Version Control ------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Version Control</h1>
+            </div>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.xhgtvejyx64g">Coding Style</a></span></p>
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#">Summary</a></li>
+                <li><a href="#">Workflow</a></li>
+            </ul>
 
-    <p class="c0 c5"><span class="c3"><a class="c1" href="#h.ahz8k6jotzkp">Local Development</a></span></p>
+            <p>All projects must use version control. At Clicksco we use Git. Please read Codebase under Project Management below which will explain our workflow and setup for repositories.</p>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.ym08yxv6pdx1">Continuous Integration</a></span></p>
+            <h2>Workflow</h2>
+            <p>There are several workflows available. We are currently in the process of choosing between the below:</p>
+            <ul>
+                <li>Gitflow</li>
+                <li>Git Flow</li>
+            </ul>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.fa1vqijeenqj">Documentation</a></span></p>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.mc6xlr4ebz4n">Behaviour Driven Development</a></span></p>
 
-    <p class="c5 c0"><span class="c3"><a class="c1" href="#h.r55e3mlgegk9">Useful Links &amp; Tools</a></span></p>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.hacldpgqke38">Development</a></span></p>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.dpcm9tzevfio">Podcasts</a></span></p>
+            <!-- Project Management ---------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Project Management</h1>
+            </div>
 
-    <p class="c10 c0"><span class="c3"><a class="c1" href="#h.ohpo4rieoz39">Books</a></span></p>
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#">Summary</a></li>
+                <li><a href="#">Basecamp</a></li>
+                <li><a href="">Codebase</a></li>
+                <li><a href="">Pivotal Tracker</a></li>
+            </ul>
 
-    <p class="c4 c0"><span></span></p>
+            <p>All projects at Clicksco usually have a Basecamp project assigned to them. Basecamp is a great way to communicate with project leads, project managers and other developers about top-level discussions. Itâ€™s the prefered method of communication.</p>
 
-    <p class="c4 c0"><span></span></p>
-    <hr style="page-break-before:always;display:none;">
-    <p class="c4 c0"><span></span></p>
 
-    <h1 class="c0"><a name="h.f1jx2bq903ch"></a><span>The Team</span></h1>
+            <h2>Codebase</h2>
 
-    <p class="c0"><span>The below list is a quick list of the Clicksco PHP team. Clicking on a name will take you to the official </span><span
-            class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Tech_Team">Tech Team Who’s
-        Who</a></span><span> page on the Clickso company wiki.</span></p>
+            <p>The Clicksco PHP team has access to our company Codebase account. Codebase is a great place for more technical discussions within your project team. The ticketing system must be used to manage all feature requests, bugs, enhancements etc. Each project that is managed by Codebase will have itâ€™s own repository which should be kept up to date.</p>
+            <p>You should have two remotes setup.</p>
+            <ul>
+                <li>origin - This should be your Codebase repo</li>
+                <li>bitbucket - This should be a BitBucket repo in the Clicksco account</li>
+            </ul>
 
-    <p class="c4 c0"><span></span></p>
+            <p>When you make a commit you can reference tickets in your commit and when it is pushed to Codebase it will automatically update ticket status etc. Read more about this here http://support.codebasehq.com/articles/tips-tricks/linking-commits-with-ticâ€¦</p>
 
-    <p class="c0"><span>UK</span></p>
+            <h2>Pivotal Tracker</h2>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Alistair_Austen">Alistair
-        Austen</a></span><span> </span></p>
+            <p>Info to come soon...</p>
 
-    <p class="c0"><span class="c3"><a class="c1"
-                                      href="http://wiki.clicksco.com/index.php?title=Andrew_Nicholson&amp;action=edit&amp;redlink=1">Andrew
-        Nicholson</a></span><span> </span></p>
 
-    <p class="c0"><span class="c3"><a class="c1"
-                                      href="http://wiki.clicksco.com/index.php?title=Jon_Park&amp;action=edit&amp;redlink=1">Jon
-        Park</a></span><span> </span></p>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Rick_Trotter">Rick Trotter</a></span><span> - Lead Developer CRM</span>
-    </p>
 
-    <p class="c0"><span class="c3"><a class="c1"
-                                      href="http://wiki.clicksco.com/index.php?title=Paul_Taylor&amp;action=edit&amp;redlink=1">Paul
-        Taylor</a></span><span> - Junior Developer CRM</span></p>
+            <!-- Frameworks ----------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Frameworks</h1>
+            </div>
 
-    <p class="c0 c4"><span></span></p>
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#">Summary</a></li>
+                <li><a href="#">Options</a></li>
+            </ul>
 
-    <p class="c0"><span>Dubai</span></p>
+            <h2>Summary</h2>
+            <p>Although there are many arguments for and against frameworks it is our policy to use a framework for all projects.</p>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/James_Mills">James
-        Mills</a></span><span> - Lead Developer LiveLocal/Click2Call</span></p>
+            <h2>Options</h2>
 
-    <p class="c4 c0"><span></span></p>
+            <ul>
+                <li>Laravel</li>
+                <li>Symfony</li>
+            </ul>
 
-    <p class="c0"><span>France</span></p>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Philippe_Jausions">Philippe
-        Jausions</a></span><span> </span><span>- Lead Developer Click.net</span></p>
 
-    <p class="c4 c0"><span></span></p>
 
-    <p class="c0"><span>Russia</span></p>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Ruslan_Kazantsev">Ruslan
-        Kazantsev</a></span><span> - ClickscoControl </span></p>
+            <!-- Editors ----------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Editors</h1>
+            </div>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Slava_Epifanov">Viacheslav
-        Epifanov aka Slava</a></span><span> - ClickscoControl </span></p>
+            <p>
+                Every PHP developer has the option of a PHPStorm licence. If you would prefer to use an IDE like Netbeans this is OK but the prefered IDE is PHPStorm.
+            </p>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Alexander_Trunov">Alexander
-        Trunov aka Sasha</a></span><span> - ClickscoControl </span></p>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://wiki.clicksco.com/index.php/Dmitrii_Shumkov">Dmitrii
-        Shumkov aka Dima</a></span><span> - ClickscoControl </span></p>
 
-    <p class="c4 c0"><span></span></p>
+            <!-- Editors ----------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Coding Style</h1>
+            </div>
 
-    <h2 class="c0"><a name="h.v5vba7yfhq06"></a><span>Team Communication</span></h2>
-    <ul class="c7 lst-kix_d37mv0scnexl-0 start">
-        <li class="c2 c0"><span class="c3"><a class="c1" href="https://thapltd.campfirenow.com/room/571408">Campfire</a></span><span> - We have a PHP room in the company Campfire account. Daily chat. </span>
-        </li>
-        <li class="c0 c2"><span class="c3"><a class="c1"
-                                              href="https://basecamp.com/1768945/projects/3731035-clicksco-php">Basecamp</a></span><span> - We have a Clicksco PHP project to discuss all things PHP related</span>
-        </li>
-        <li class="c2 c0"><span>Skype - Although it is encouraged that all communication is made though Campfire or Basecamp from time to time you may need to speak with members of the team directly. </span>
-        </li>
-    </ul>
-    <hr style="page-break-before:always;display:none;">
-    <h1 class="c0 c8"><a name="h.ywc1fmqdohdt"></a></h1>
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#">Summary</a></li>
+                <li><a href="#">Composer</a></li>
+                <li><a href="#">Git</a></li>
+                <li><a href="">Packages</a></li>
+            </ul>
 
-    <h1 class="c0"><a name="h.1fvgz18ivnxj"></a><span>Version Control</span></h1>
+            <h2>Summary</h2>
+            <p>
+                Clicksco uses PSR-2 by the PHP Framework Interop Group (PHP-FIG). There is a list of information on their website and the most up-to-date version can always be found on GitHub.
+            </p>
 
-    <p class="c0">
-        <span>All projects must use version control. At Clicksco we use Git. Please read Codebase under </span><span
-            class="c3"><a class="c1" href="#h.l2s1esggcjb3">Project Management</a></span><span> below which will explain our workflow and setup for repositories.</span>
-    </p>
+            <p>
+                There are a number of tools to help you stick to our chosen coding standard (coding style). One of those tools is called PHP_CodeSniffer, which validates your code for consistence with PSR. You can use this tool via the command line or set PHPStorm to use this to highlight errors in the IDE as you type. Setting up PHPStorm and PHP_CodeSniffer (checkout this quick video).
+            </p>
 
-    <h2 class="c0"><a name="h.hk8vl3xakbaz"></a><span>Workflow</span></h2>
+            <h2>Composer</h2>
+            <p>
+                Composer is kind of covered under PSR-0 as the autoloading standard however itâ€™s worth having as a separate section because of itâ€™s importance.
+            </p>
 
-    <p class="c0"><span>There are several workflows available. We are currently in the process of choosing between the below:</span>
-    </p>
+            <h2>Git</h2>
+            <p>
+                The â€˜vendorâ€™ folder should be included in your .gitignore folder and your deployment strategy should make sure that â€˜composer installâ€™ is run pre code deployment.
+            </p>
 
-    <p class="c4 c0"><span></span></p>
-    <ol class="c7 lst-kix_nyggf21ab0y1-0 start" start="1">
-        <li class="c2 c0"><span class="c3"><a class="c1"
-                                              href="https://www.atlassian.com/git/workflows#!workflow-gitflow">Gitflow</a></span>
-        </li>
-        <li class="c2 c0"><span>Git Flow</span></li>
-    </ol>
-    <p class="c4 c0"><span></span></p>
 
-    <h1 class="c0"><a name="h.l2s1esggcjb3"></a><span>Project Management </span></h1>
+            <h2>Packages</h2>
+            <p>
+                You should always do a search on Packagist and also our company package directory before you work on a new package. Before writing new functionality for your project take a step back and discuss with the team if what you are working on should be a package so we can all make use of it.
+            </p>
 
-    <h2 class="c0"><a name="h.7s3gkj7fe6f3"></a><span>Basecamp</span></h2>
 
-    <p class="c0"><span>All projects at Clicksco usually have a Basecamp project assigned to them. Basecamp is a great way to communicate with project leads, project managers and other developers about top-level discussions. It’s the prefered method of communication.</span>
-    </p>
+            <!-- Editors -------------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Local Development</h1>
+            </div>
 
-    <p class="c4 c0"><span></span></p>
 
-    <h2 class="c0"><a name="h.x75w4vljm71"></a><span>Codebase</span></h2>
+            <p>
+                The best way to get a local development environment setup is to use Virtualbox and Vagrant. We have a couple of managed base boxâ€™s which you can use depending on your project requirements.
+            </p>
 
-    <p class="c0"><span>The Clicksco PHP team has access to our company Codebase account. Codebase is a great place for more technical discussions within your project team. The ticketing system must be used to manage all feature requests, bugs, enhancements etc. Each project that is managed by Codebase will have it’s own repository which should be kept up to date.</span>
-    </p>
+            <ul>
+                <li>Symfony - https://github.com/jamesmills/vagrant</li>
+                <li>Link to Jon Parks verison on GitHub</li>
+            </ul>
 
-    <p class="c4 c0"><span class="c11"></span></p>
 
-    <p class="c0"><span class="c11">You should have two remotes setup.</span></p>
-    <ol class="c7 lst-kix_yxp5xf4njckb-0 start" start="1">
-        <li class="c2 c0"><span class="c11">origin - This should be your Codebase repo</span></li>
-        <li class="c2 c0"><span class="c11">bitbucket - This should be a BitBucket repo in the Clicksco account <br>(ask if you do not have access)</span>
-        </li>
-    </ol>
-    <p class="c4 c0"><span class="c11"></span></p>
 
-    <p class="c0"><span class="c11">When you make a commit you can reference tickets in your commit and when it is pushed to Codebase it will automatically update ticket status etc. Read more about this here </span><span
-            class="c13 c11"><a class="c1"
-                               href="http://support.codebasehq.com/articles/tips-tricks/linking-commits-with-tickets">http://support.codebasehq.com/articles/tips-tricks/linking-commits-with-tic…</a></span>
-    </p>
+            <!-- Continuous Integration ----------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Continuous Integration</h1>
+            </div>
 
-    <p class="c4 c0"><span></span></p>
 
-    <h2 class="c0"><a name="h.hl3p6tbrfue5"></a><span>Pivotal Tracker</span></h2>
+            <p>
+                Travis / TeamCity / Jenkins
+            </p>
 
-    <p class="c0"><span>… info coming soon …</span></p>
 
-    <p class="c4 c0"><span></span></p>
+            <!-- Documentation -------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Documentation</h1>
+            </div>
 
-    <p class="c4 c0"><span></span></p>
+            <p>
+                This should be done.
+            </p>
 
-    <h1 class="c0"><a name="h.yq2ged8axuzf"></a><span>Frameworks</span></h1>
+            <p>
+                It is easy to add PHPDocBlocks to your classes using PHPStorm and on a larger project we would encourage you to do this. More info at phpDocumentor
+            </p>
 
-    <p class="c0"><span>Although there are many arguments for and against frameworks it is our policy to use a framework for all projects. </span>
-    </p>
 
-    <p class="c4 c0"><span></span></p>
+            <!-- Documentation -------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Behaviour Driven Development</h1>
+            </div>
 
-    <h2 class="c0"><a name="h.e6amxxqbt069"></a><span>Laravel</span></h2>
+            <p>
+                Behat... more info to come soon...
+            </p>
 
-    <p class="c0"><span>A great framework. </span></p>
 
-    <h2 class="c0"><a name="h.6a6o2bqavilc"></a><span>Symfony</span></h2>
+            <!-- Useful Links &amp; Tools -------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1>Useful Links &amp; Tools</h1>
+            </div>
 
-    <p class="c0"><span>Maybe for larger projects</span></p>
+            <p>
+                A collection of useful link and tools for development and learning etc. Please free to add to this collection.
+            </p>
 
-    <p class="c4 c0"><span></span></p>
+            <h2>Development</h2>
+            <ol>
+                <li>
+                    <a href="http://www.sequelpro.com/">Sequel Pro</a>
+                    - fast, easy-to-use Mac database management application for working with MySQL databases.
+                </li>
+                <li>
+                    <a href="http://www.sourcetreeapp.com/">SourceTree</a>
+                    - SourceTree is a free Mac client for Git
+                </li>
+            </ol>
 
-    <h1 class="c0"><a name="h.30mcd5tp80sk"></a><span>Editors</span></h1>
+            <h2>Podcasts</h2>
+            <ol>
+                <li>
+                    <a href="http://laravel.io/topic/25/laravelio-podcast-episode-1-laravel-4-becomes-official-and-laracon-eu-2013">Laravel.io</a>
+                    - A great podcast covering all sorts of Laravel goodness.
+                </li>
+                <li>
+                    <a href="http://phptownhall.com">PHP Town Hall</a>
+                    - General PHP podcast. Good to pick up new things in the industry.
+                </li>
+            </ol>
 
-    <p class="c0"><span>Every PHP developer has the option of a </span><span class="c3"><a class="c1"
-                                                                                           href="http://www.jetbrains.com/phpstorm/">PHPStorm</a></span><span> licence. If you would prefer to use an IDE like Netbeans this is OK but the prefered IDE is PHPStorm.</span>
-    </p>
+            <h2>Books</h2>
+            <ol>
+                <li>
+                    <a href="https://leanpub.com/codebright%20">Laravel: Code Bright</a>
+                    [Available in Clicksco PHP dropbox]
+                </li>
+                <li>
+                    <a href="https://leanpub.com/laravel-testing-decoded">Laravel Testing Decoded</a>
+                    [Available in Clicksco PHP dropbox]
+                </li>
+                <li>
+                    <a href="https://leanpub.com/laravel">Laravel: From Apprentice To Artisan</a>
+                    [Available in Clicksco PHP dropbox]
+                </li>
+            </ol>
 
-    <p class="c4 c0"><span></span></p>
 
-    <h1 class="c0"><a name="h.xhgtvejyx64g"></a><span>Coding Style</span></h1>
 
-    <p class="c0"><span>Clicksco uses </span><span class="c3"><a class="c1"
-                                                                 href="http://www.php-fig.org/psr/2/">PSR-2</a></span><span> by the </span><span
-            class="c3"><a class="c1" href="http://www.php-fig.org/">PHP Framework Interop Group</a></span><span> (PHP-FIG). There is a list of information on their website and the most up-to-date version can always be found on </span><span
-            class="c3"><a class="c1"
-                          href="https://github.com/php-fig/fig-standards/tree/master/accepted">GitHub</a></span><span>.</span>
-    </p>
 
-    <p class="c4 c0"><span></span></p>
 
-    <p class="c0"><span>There are a number of tools to help you stick to our chosen coding standard (coding style). One of those tools is called </span><span
-            class="c3"><a class="c1"
-                          href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a></span><span>, which validates your code for consistence with PSR. You can use this tool via the command line or set PHPStorm to </span><span>use this to highlight errors in the IDE as you type. </span><span
-            class="c3"><a class="c1" href="http://www.jetbrains.com/phpstorm/webhelp/using-php-code-sniffer-tool.html">Setting
-        up PHPStorm and PHP_CodeSniffer</a></span><span> (</span><span class="c3"><a class="c1"
-                                                                                     href="http://jamesmills.co.uk/screen/2013-08-15_0926.swf">checkout
-        this quick video</a></span><span>).</span></p>
 
-    <p class="c4 c0"><span></span></p>
 
-    <h1 class="c0"><a name="h.uwbw2uq8o0le"></a><span>Composer </span></h1>
 
-    <p class="c0"><span class="c3"><a class="c1" href="http://getcomposer.org">Composer</a></span><span> is kind of covered under </span><span
-            class="c3"><a class="c1" href="http://www.php-fig.org/psr/0/">PSR-0</a></span><span> as the autoloading standard however it’s worth having as a separate section because of it’s importance. </span>
-    </p>
 
-    <h2 class="c0"><a name="h.klod2ahetmu1"></a><span>Git</span></h2>
 
-    <p class="c0"><span>The ‘vendor’ folder should be included in your .gitignore folder and your deployment strategy should make sure that ‘composer install’ is run pre code deployment. </span>
-    </p>
 
-    <h2 class="c0"><a name="h.onuatfdmfk0a"></a><span>Packages</span></h2>
 
-    <p class="c0"><span>You should always do a search on </span><span class="c3"><a class="c1"
-                                                                                    href="https://packagist.org">Packagist</a></span><span> and also our </span><span>company package directory</span><span> before you work on a new package. Before writing new functionality for your project take a step back and discuss with the team if what you are working on should be a package so we can all make use of it.</span>
-    </p>
 
-    <h1 class="c0"><a name="h.ahz8k6jotzkp"></a><span>Local Development</span></h1>
 
-    <p class="c0"><span>The best way to get a local development environment setup is to use </span><span class="c3"><a
-            class="c1" href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></span><span> and </span><span
-            class="c3"><a class="c1" href="http://vagrantup.com/">Vagrant</a></span><span class="c9">. We have a couple of managed base box’s which you can use depending on your project requirements.</span>
-    </p>
 
-    <p class="c4 c0"><span class="c9"></span></p>
-    <ol class="c7 lst-kix_9b094ovdwyv-0 start" start="1">
-        <li class="c2 c0"><span class="c9">Symfony - </span><span class="c3"><a class="c1"
-                                                                                href="https://github.com/jamesmills/vagrant">https://github.com/jamesmills/vagrant </a></span>
-        </li>
-        <li class="c2 c0"><span class="c9">Laravel - </span><span class="c3"><a class="c1"
-                                                                                href="https://github.com/jamesmills/vagrant">https://github.com/jamesmills/vagrant </a></span>
-        </li>
-    </ol>
-    <p class="c4 c0"><span></span></p>
-
-    <h1 class="c0"><a name="h.ym08yxv6pdx1"></a><span>Continuous Integration</span></h1>
-
-    <p class="c0"><span>Travis / TeamCity / Jenkins</span></p>
-
-    <p class="c4 c0"><span></span></p>
-
-    <h1 class="c0"><a name="h.fa1vqijeenqj"></a><span>Documentation</span></h1>
-
-    <p class="c0"><span>Although not essential it is easy to add PHPDocBlocks to your classes using PHPStorm and on a larger project we would encourage you to do this. More info at </span><span
-            class="c3"><a class="c1" href="http://www.phpdoc.org/">phpDocumentor</a></span></p>
-
-    <p class="c4 c0"><span></span></p>
-
-    <h1 class="c0"><a name="h.mc6xlr4ebz4n"></a><span>Behaviour Driven Development</span></h1>
-
-    <p class="c0"><span class="c3"><a class="c1" href="http://behat.org/">Behat</a></span><span> </span></p>
-
-    <p class="c4 c0"><span></span></p>
-
-    <h1 class="c0"><a name="h.r55e3mlgegk9"></a><span>Useful Links &amp; Tools</span></h1>
-
-    <p class="c0"><span>A collection of useful link and tools for development and learning etc. Please free to add to this collection.</span>
-    </p>
-
-    <h2 class="c0"><a name="h.hacldpgqke38"></a><span>Development</span></h2>
-    <ol class="c7 lst-kix_bmkxp7ri40zl-0 start" start="1">
-        <li class="c2 c0"><span class="c3"><a class="c1" href="http://www.sequelpro.com/">Sequel Pro</a></span><span> - fast, easy-to-use Mac database management application for working with MySQL databases.</span>
-        </li>
-        <li class="c2 c0"><span class="c3"><a class="c1"
-                                              href="http://www.sourcetreeapp.com/">SourceTree</a></span><span> - SourceTree is a free Mac client for Git</span>
-        </li>
-    </ol>
-    <p class="c4 c0"><span></span></p>
-
-    <h2 class="c0"><a name="h.dpcm9tzevfio"></a><span>Podcasts</span></h2>
-    <ol class="c7 lst-kix_eum94uhqqrhe-0 start" start="1">
-        <li class="c2 c0 c6"><span class="c3"><a class="c1"
-                                                 href="http://laravel.io/topic/25/laravelio-podcast-episode-1-laravel-4-becomes-official-and-laracon-eu-2013">Laravel.io</a></span><span> - A great podcast covering all sorts of Laravel goodness.</span>
-        </li>
-        <li class="c2 c6 c0"><span class="c3"><a class="c1" href="http://phptownhall.com">PHP Town Hall</a></span><span> - General PHP podcast. Good to pick up new things in the industry.</span>
-        </li>
-    </ol>
-    <p class="c6 c4 c0"><span class="c13"><a class="c1"
-                                             href="http://laravel.io/topic/25/laravelio-podcast-episode-1-laravel-4-becomes-official-and-laracon-eu-2013"></a></span>
-    </p>
-
-    <h2 class="c0 c14"><a name="h.ohpo4rieoz39"></a><span>Books</span></h2>
-    <ol class="c7 lst-kix_77ho0h5n3t8d-0 start" start="1">
-        <li class="c2 c0"><span class="c3"><a class="c1" href="https://leanpub.com/codebright%20">Laravel: Code
-            Bright</a></span><span> [</span><span class="c3"><a class="c1"
-                                                                href="https://www.dropbox.com/s/uo3wf3cx23fwgbo/codebright.pdf">Download</a></span><span>]</span>
-        </li>
-        <li class="c2 c0"><span class="c3"><a class="c1" href="https://leanpub.com/laravel-testing-decoded">Laravel
-            Testing Decoded</a></span><span> [</span><span class="c3"><a class="c1"
-                                                                         href="https://www.dropbox.com/s/t42pb30g690te8y/laravel-testing-decoded.pdf">Download</a></span><span>]</span>
-        </li>
-        <li class="c2 c0"><span class="c3"><a class="c1" href="https://leanpub.com/laravel">Laravel: From Apprentice To
-            Artisan</a></span><span> [</span><span class="c3"><a class="c1"
-                                                                 href="https://www.dropbox.com/s/132k619sz6gpp1x/laravel.pdf">Download</a></span><span>] </span>
-        </li>
-    </ol>
-    <p class="c4 c0"><span></span></p></div>
-<div id="footer"><span>Published by <a target="_blank" title="Learn more about Google Drive" href="//docs.google.com/">Google
-    Drive</a></span><span class="dash">&ndash;</span><a
-        href="//docs.google.com/abuse?id=1f5bt8McOIcI-og7ptGVGWkb86n1WYLyiDvPUrHVYplY">Report Abuse</a><span
-        class="dash">&ndash;</span><span>Updated automatically every 5 minutes</span></div>
-<script type="text/javascript">
-    (function () {
-        if (window.jstiming) {
-            window.jstiming.a = {};
-            window.jstiming.b = 1;
-            var e = function (b, a, d) {
-                var c = b.t[a], g = b.t.start;
-                if (c && (g || d))return c = b.t[a][0], void 0 != d ? g = d : g = g[0], c - g
-            }, n = function (b, a, d) {
-                var c = "";
-                window.jstiming.pt && (c += "&srt=" + window.jstiming.pt, delete window.jstiming.pt);
-                try {
-                    window.external && window.external.tran ? c += "&tran=" + window.external.tran : window.gtbExternal && window.gtbExternal.tran ? c += "&tran=" + window.gtbExternal.tran() : window.chrome && window.chrome.csi && (c += "&tran=" + window.chrome.csi().tran)
-                } catch (g) {
-                }
-                var f =
-                        window.chrome;
-                if (f && (f = f.loadTimes)) {
-                    f().wasFetchedViaSpdy && (c += "&p=s");
-                    if (f().wasNpnNegotiated) {
-                        var c = c + "&npn=1", k = f().npnNegotiatedProtocol;
-                        k && (c += "&npnv=" + (encodeURIComponent || escape)(k))
-                    }
-                    f().wasAlternateProtocolAvailable && (c += "&apa=1")
-                }
-                var l = b.t, s = l.start, f = [], k = [], h;
-                for (h in l)if ("start" != h && 0 != h.indexOf("_")) {
-                    var m = l[h][1];
-                    m ? l[m] && k.push(h + "." + e(b, h, l[m][0])) : s && f.push(h + "." + e(b, h))
-                }
-                delete l.start;
-                if (a)for (var p in a)c += "&" + p + "=" + a[p];
-                (a = d) || (a = "https:" == document.location.protocol ? "https://csi.gstatic.com/csi" :
-                        "http://csi.gstatic.com/csi");
-                return[a, "?v=3", "&s=" + (window.jstiming.sn || "_s") + "&action=", b.name, k.length ? "&it=" + k.join(",") : "", c, "&rt=", f.join(",")].join("")
-            };
-            window.jstiming.getReportUri = n;
-            var q = function (b, a, d) {
-                b = n(b, a, d);
-                if (!b)return"";
-                a = new Image;
-                var c = window.jstiming.b++;
-                window.jstiming.a[c] = a;
-                a.onload = a.onerror = function () {
-                    window.jstiming && delete window.jstiming.a[c]
-                };
-                a.src = b;
-                a = null;
-                return b
-            };
-            window.jstiming.report = function (b, a, d) {
-                if ("prerender" == document.webkitVisibilityState) {
-                    var c = !1, g = function () {
-                        if (!c) {
-                            a ?
-                                    a.prerender = "1" : a = {prerender: "1"};
-                            var f;
-                            "prerender" == document.webkitVisibilityState ? f = !1 : (q(b, a, d), f = !0);
-                            f && (c = !0, document.removeEventListener("webkitvisibilitychange", g, !1))
-                        }
-                    };
-                    document.addEventListener("webkitvisibilitychange", g, !1);
-                    return""
-                }
-                return q(b, a, d)
-            };
-            window.jstiming.reportDone = function (b) {
-                if (window.jstiming.b <= (b || 1))return!1;
-                for (var a in window.jstiming.a)return!1;
-                return!0
-            };
-            var r = function (b, a, d, c) {
-                return 0 < d ? (c ? b.tick(a, c, d) : b.tick(a, "", d), !0) : !1
-            };
-            window.jstiming.getNavTiming = function (b) {
-                if (window.performance &&
-                        window.performance.timing) {
-                    var a = window.performance.timing;
-                    r(b, "_dns", a.domainLookupStart) && r(b, "dns_", a.domainLookupEnd, "_dns");
-                    r(b, "_con", a.connectStart) && r(b, "con_", a.connectEnd, "_con");
-                    r(b, "_req", a.requestStart) && r(b, "req_", a.responseStart, "_req");
-                    r(b, "_rcv", a.responseStart) && r(b, "rcv_", a.responseEnd, "_rcv");
-                    if (r(b, "_ns", a.navigationStart)) {
-                        r(b, "ntsrt_", a.responseStart, "_ns");
-                        r(b, "nsfs_", a.fetchStart, "_ns");
-                        var d = window.external && window.external.startE;
-                        !d && window.chrome && window.chrome.csi && (d =
-                                Math.floor(window.chrome.csi().startE));
-                        d && (r(b, "_se", d), r(b, "sens_", a.navigationStart, "_se"));
-                        r(b, "ntplt0_", a.loadEventStart, "_ns");
-                        r(b, "ntplt1_", a.loadEventEnd, "_ns")
-                    }
-                }
-            }
-        }
-        ;
-    })()
-</script>
-<script type="text/javascript">KX_timer.tick('tl');
-if (document.location.protocol == 'https:') {
-    window.jstiming.report(KX_timer, undefined, 'https://gg.google.com/csi');
-} else {
-    window.jstiming.report(KX_timer);
-}</script>
+
+
+
+
+
+        </div>
+    </div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
