@@ -18,14 +18,6 @@
     <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript">
-        $(document).ready(
-            function() {
-                $('body').scrollspy({ target: '#main-navigation' })
-            }
-        );
-    </script>
-
 </head>
 <body data-spy="scroll" data-target="#main-navigation">
 
@@ -431,6 +423,7 @@
 
 
 
+        </div>
 
 
 
@@ -454,5 +447,14 @@
 <script src="//code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(
+                function() {
+                    $('body').scrollspy({ target: '#main-navigation' })
+                }
+        );
+    </script>
+
 </body>
 </html>
