@@ -448,13 +448,17 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(
-                function() {
-                    $('body').scrollspy({ target: '#main-navigation' })
-                }
-        );
-    </script>
+<script type="text/javascript">
+    $(document).ready(
+            function() {
+                $('body').scrollspy({ target: '#main-navigation' })
+            }
+    );
+
+    $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this).scrollspy('refresh')
+    });
+</script>
 
 </body>
 </html>
