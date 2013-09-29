@@ -178,9 +178,11 @@
             <h2>Communication</h2>
 
             <ul>
-                <li>Campfire - We have a PHP room in the company Campfire account. Daily chat.</li>
-                <li>Basecamp - We have a Clicksco PHP project to discuss all things PHP related</li>
+                <li><a href="https://thapltd.campfirenow.com/room/571408">Campfire</a> - We have a PHP room in the company Campfire account.</li>
+                <li><a href="https://basecamp.com/1768945/projects/3731035-clicksco-php">Basecamp</a> - We have a Clicksco PHP project to discuss all things PHP.</li>
                 <li>Skype - Although it is encouraged that all communication is made though Campfire or Basecamp from time to time you may need to speak with members of the team directly.</li>
+                <li><a href="http://screenhero.com ">ScreenHero</a> - Collaboration is key. <a href="http://en.wikipedia.org/wiki/Pair_programming">Pair Programming</a> is a great and encoraged.</li>
+
 
             </ul>
 
@@ -191,20 +193,23 @@
                 <h1 id="version-control">Version Control</h1>
             </div>
 
-            <ul class="nav nav-pills">
-                <li><a href="#">Summary</a></li>
-                <li><a href="#">Workflow</a></li>
-            </ul>
-
-            <h2>Summary</h2>
-            <p>All projects must use version control. At Clicksco we use Git. Please read Codebase under Project Management below which will explain our workflow and setup for repositories.</p>
+            <p>All projects must use version control. At Clicksco we use Git.</p>
 
             <h2>Workflow</h2>
-            <p>There are several workflows available. We are currently in the process of choosing between the below:</p>
-            <ul>
-                <li>Gitflow</li>
-                <li>Git Flow</li>
-            </ul>
+            <p>
+                The workflow of choice for the PHP team at Clicksco is <a href="#">Github Flow</a>.
+            </p>
+
+            <h2>.gitignore</h2>
+
+            <p>
+                A standard .gitignore example is shown below. Please make sure to ignore all editor/IDE settings etc.
+            </p>
+
+            <pre>
+.idea
+vendor
+            </pre>
 
             <hr class="docs-hr">
 
@@ -213,29 +218,32 @@
                 <h1 id="project-management">Project Management</h1>
             </div>
 
-            <ul class="nav nav-pills">
-                <li><a href="#">Summary</a></li>
-                <li><a href="#">Basecamp</a></li>
-                <li><a href="">Codebase</a></li>
-                <li><a href="">Pivotal Tracker</a></li>
-            </ul>
+            <p>
+                There are several tools available to help you manage your projects. The main two are <a href="https://basecamp.com/">Basecamp</a> and <a href="http://www.codebasehq.com/">Codebase</a>. 
+            </p>
 
-            <h2>Summary</h2>
-            <p>All projects at Clicksco usually have a Basecamp project assigned to them. Basecamp is a great way to communicate with project leads, project managers and other developers about top-level discussions. Itâ€™s the prefered method of communication.</p>
+            <h2>Basecamp</h2>
+            <p>All projects at Clicksco have a Basecamp project assigned to them. Basecamp is a great way to communicate with project leads, project managers and other developers about top-level discussions. It's the prefered method of communication.</p>
 
             <h2>Codebase</h2>
-            <p>The Clicksco PHP team has access to our company Codebase account. Codebase is a great place for more technical discussions within your project team. The ticketing system must be used to manage all feature requests, bugs, enhancements etc. Each project that is managed by Codebase will have itâ€™s own repository which should be kept up to date.</p>
+            <p>
+                The Clicksco PHP team has access to our company Codebase account. Codebase is a great place for more technical discussions within your project team. The ticketing system must be used to manage all feature requests, bugs, enhancements etc. Each project that is managed by Codebase will have it's own repository which should be kept up to date.
+            </p>
+
             <p>You should have two remotes setup.</p>
             <ul>
                 <li>origin - This should be your Codebase repo</li>
                 <li>bitbucket - This should be a BitBucket repo in the Clicksco account</li>
             </ul>
 
-            <p>When you make a commit you can reference tickets in your commit and when it is pushed to Codebase it will automatically update ticket status etc. Read more about this here http://support.codebasehq.com/articles/tips-tricks/linking-commits-with-ticâ€¦</p>
+            <p>
+                When you make a commit you can reference tickets in your commit and when it is pushed to Codebase it will automatically update ticket status etc.
+                <a href="http://support.codebasehq.com/articles/tips-tricks/linking-commits-with-tickets">Read more about this</a>.
+            </p>
 
-            <h2>Pivotal Tracker</h2>
-
-            <p>Info to come soon...</p>
+            <p>
+                It's good practice to manage a top level to-do list in Basecamp which is understandable and readable by everyone. You can then reference which ticket this work refrences in Codebase by adding [Ticket 44] to the title.
+            </p>
 
             <hr class="docs-hr">
 
@@ -244,20 +252,16 @@
                 <h1 id="frameworks">Frameworks</h1>
             </div>
 
-            <ul class="nav nav-pills">
-                <li><a href="#">Summary</a></li>
-                <li><a href="#">Options</a></li>
-            </ul>
+            <p>
+                For every new project a short team discussion will take place to make sure the right Framework will be implemented. The default/standard framework is currently <a href="http://laravel.com/">Laravel</a>.
+            </p>
 
-            <h2>Summary</h2>
-            <p>Although there are many arguments for and against frameworks it is our policy to use a framework for all projects.</p>
-
-            <h2>Options</h2>
-
-            <ul>
-                <li>Laravel</li>
-                <li>Symfony</li>
-            </ul>
+            <p>
+                As a team we understand that each project is different with different requirements which may not fit in with the standard framework of choice.
+                We also understand that as a large team of developers as part of a international company it is sensible to have a certain about of standardisation when it comes to tools and processes.
+                Because of this we discuss each projects requirements together before a new project is started to make sure the correct tools are used.
+                We are open to assessing new frameworks and have an internal process for this.
+            </p>
 
             <hr class="docs-hr">
 
@@ -267,7 +271,7 @@
             </div>
 
             <p>
-                Every PHP developer has the option of a PHPStorm licence. If you would prefer to use an IDE like Netbeans this is OK but the prefered IDE is PHPStorm.
+                A developer is open to use whichever editor they want. Every developer has access to a <a href="http://www.jetbrains.com/phpstorm/">PHP Storm</a> licence if they want and this is the more widely used IDE within the group.
             </p>
 
             <hr class="docs-hr">
@@ -277,37 +281,66 @@
                 <h1 id="coding-style">Coding Style</h1>
             </div>
 
-            <ul class="nav nav-pills">
-                <li><a href="#">Summary</a></li>
-                <li><a href="#">Composer</a></li>
-                <li><a href="#">Git</a></li>
-                <li><a href="">Packages</a></li>
+            <p>
+                As we don't believe in wasting time reinventing the wheel, the Clickco PHP team follow the great work by the <a href="http://www.php-fig.org">PHP Framework Interop Group (PHP-FIG)</a> and follow the various PSR's (PHP Standards Recommendation).
+                A great article explaining what this is all about can be read here <a href="http://net.tutsplus.com/tutorials/php/psr-huh/">PSR-Huh?</a>.
+            </p>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0 Autoloading Standard</a>
+                </li>
+                <li>
+                    <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1 Basic Coding Standard</a>
+                </li>
+                <li>
+                    <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2 Coding Style Guide</a>
+                </li>
             </ul>
 
-            <h2>Summary</h2>
             <p>
-                Clicksco uses PSR-2 by the PHP Framework Interop Group (PHP-FIG). There is a list of information on their website and the most up-to-date version can always be found on GitHub.
+                There are a number of tools to help you stick to our chosen coding standard (coding style). One of those tools is called
+                <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>, which validates your code for consistence with PSR. You can use this tool via the command line or set PHPStorm to use this to highlight errors in the IDE as you type.
+                <a href="http://jamesmills.co.uk/screen/2013-08-15_0926.swf">Setting up PHPStorm and PHP_CodeSniffer, checkout this quick video</a>.
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- Composer -------------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1 id="local-development">Composer</h1>
+            </div>
+
+            <p>
+                <a href="http://getcomposer.org/">Composer</a> is a tool for dependency management in PHP. It allows you to declare the dependent libraries your project needs and it will install them in your project for you.
             </p>
 
             <p>
-                There are a number of tools to help you stick to our chosen coding standard (coding style). One of those tools is called PHP_CodeSniffer, which validates your code for consistence with PSR. You can use this tool via the command line or set PHPStorm to use this to highlight errors in the IDE as you type. Setting up PHPStorm and PHP_CodeSniffer (checkout this quick video).
+                Every project should make use of Composer and this is the standard way of setting up autoloading in projects. The below example will auto load all classes in the src directory.
             </p>
 
-            <h2>Composer</h2>
+            <pre>
+"autoload": {
+    "classmap": [
+        "src/"
+    ]
+}
+            </pre>
+
+            <hr class="docs-hr">
+
+            <!-- Packages -------------------------------------------------------------------------------------------->
+            <div class="page-header">
+                <h1 id="local-development">Packages</h1>
+            </div>
+
             <p>
-                Composer is kind of covered under PSR-0 as the autoloading standard however itâ€™s worth having as a separate section because of itâ€™s importance.
+                You should always do a search on <a href="https://packagist.org/">Packagist</a> and also our company package directory before you work on a new package. Before writing new functionality for your project take a step back and discuss with the team if what you are working on should be a package so we can all make use of it.
             </p>
 
-            <h2>Git</h2>
-            <p>
-                The â€˜vendorâ€™ folder should be included in your .gitignore folder and your deployment strategy should make sure that â€˜composer installâ€™ is run pre code deployment.
-            </p>
+            <h2>Internal package directory</h2>
 
-
-            <h2>Packages</h2>
-            <p>
-                You should always do a search on Packagist and also our company package directory before you work on a new package. Before writing new functionality for your project take a step back and discuss with the team if what you are working on should be a package so we can all make use of it.
-            </p>
+            <span class="label label-default">Work in progress...</span>
 
             <hr class="docs-hr">
 
@@ -317,13 +350,13 @@
             </div>
 
             <p>
-                The best way to get a local development environment setup is to use Virtualbox and Vagrant. We have a couple of managed base boxâ€™s which you can use depending on your project requirements.
+                The best way to get a local development environment setup is to use Virtualbox and Vagrant.
             </p>
 
-            <ul>
-                <li>Symfony - https://github.com/jamesmills/vagrant</li>
-                <li>Link to Jon Parks verison on GitHub</li>
-            </ul>
+            <p>
+                We are working on a base box to match the companies live environments. <a href="https://github.com/Clicksco/ubuntu-in-a-box">A temporary setup can be found on our GitHub page</a>. Another great resource is
+                <a href="https://puphpet.com/">puphpet.com</a>, a simple GUI to set up virtual machines for PHP development.
+            </p>
 
             <hr class="docs-hr">
 
@@ -332,10 +365,7 @@
                 <h1 id="continuous-integration">Continuous Integration</h1>
             </div>
 
-
-            <p>
-                Travis / TeamCity / Jenkins
-            </p>
+            <span class="label label-default">Work in progress...</span>
 
             <hr class="docs-hr">
 
@@ -345,11 +375,7 @@
             </div>
 
             <p>
-                This should be done.
-            </p>
-
-            <p>
-                It is easy to add PHPDocBlocks to your classes using PHPStorm and on a larger project we would encourage you to do this. More info at phpDocumentor
+                Every project should include DocBlocks. <a href="http://www.phpdoc.org/docs/latest/for-users/phpdoc/basic-syntax.html#what-is-a-docblock">What is a docblock?</a>
             </p>
 
             <hr class="docs-hr">
@@ -359,9 +385,7 @@
                 <h1 id="bdd">Behaviour Driven Development</h1>
             </div>
 
-            <p>
-                Behat... more info to come soon...
-            </p>
+            <span class="label label-default">Work in progress...</span>
 
             <hr class="docs-hr">
 
@@ -370,11 +394,9 @@
                 <h1 id="links">Useful Links &amp; Tools</h1>
             </div>
 
-            <ul class="nav nav-pills">
-                <li><a href="#">Development</a></li>
-                <li><a href="#">Podcasts</a></li>
-                <li><a href="">Books</a></li>
-            </ul>
+            <p>
+                A few useful links can be found below:
+            </p>
 
             <h2>Development</h2>
             <ol>
@@ -404,15 +426,12 @@
             <ol>
                 <li>
                     <a href="https://leanpub.com/codebright%20">Laravel: Code Bright</a>
-                    [Available in Clicksco PHP dropbox]
                 </li>
                 <li>
                     <a href="https://leanpub.com/laravel-testing-decoded">Laravel Testing Decoded</a>
-                    [Available in Clicksco PHP dropbox]
                 </li>
                 <li>
                     <a href="https://leanpub.com/laravel">Laravel: From Apprentice To Artisan</a>
-                    [Available in Clicksco PHP dropbox]
                 </li>
             </ol>
 
