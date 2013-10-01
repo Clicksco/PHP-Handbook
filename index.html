@@ -193,8 +193,29 @@
 
             <h2>Workflow</h2>
             <p>
-                The workflow of choice for the PHP team at Clicksco is <a href="#">Github Flow</a>.
+                The workflow of choice for the PHP team at Clicksco is <em>Github Flow</em>. For a full overview on the topic and it's benefits over traditional <em>Git Flow</em>, try <a href="http://scottchacon.com/2011/08/31/github-flow.html">reading this article by Scott Chacon</a>.
             </p>
+
+            <h3>Github Flow Overview</h3>
+            <p>The standard workflow using Github Flow is performed using merge/pull requests and ties in nicely to any automated deployment or Continuous Integration. The main highlights are:</p>
+
+            <ul>
+                <li>Anything on master is deployable</li>
+                <li>New features or hotfixes are branched from master</li>
+                <li>Merge requests are a great opportunity for peer-review and don't necessarily indicate completion</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>A new feature is required for an existing project that uses Github Flow. Here's how it should pan out:</p>
+
+            <ol>
+                <li>The master branch is checked out and brought up-to-date.</li>
+                <li>A new branch is forked from master. This should be named descriptively, for example: improved-widget-model, registration-hotfix.</li>
+                <li>Changes are made, files deleted, tests are written and the branch is worked until we're happy with what we have.</li>
+                <li>A new merge/pull request is sent to the origin repository and an overview of the changes made. Anyone else that is on the project now has the opportunity to review and contribute.</li>
+                <li>The branch can be continued to be worked on and any changes pushed back to origin, automatically updating the merge request.</li>
+                <li>Once satisfactory, the merge request can be completed and master is updated.</li>
+            </ol>
 
             <h2>.gitignore</h2>
 
