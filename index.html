@@ -42,6 +42,7 @@
                     <li><a href="#continuous-integration">Continuous Integration</a></li>
                     <li><a href="#documentation">Documentation</a></li>
                     <li><a href="#bdd">Behaviour Driven Development</a></li>
+                    <li><a href="#security-best-practice">Security Best Practice</a></li>
                     <li><a href="#links">Useful Links & Tools</a></li>
                 </ul>
             </div>
@@ -425,6 +426,94 @@ vendor
             </div>
 
             <span class="label label-default">Work in progress...</span>
+
+            <hr class="docs-hr">
+
+            <!-- Security Best Practice - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="security-best-practice">Security Best Practice</h1>
+            </div>
+
+            <h3>Do not underestimate the power of the Dark Side</h3>
+            <p>Compared to the web application programmer, an attacker is generally more creative when it comes to destructive thinking. It is dangerous to think that something is unbreakable just because one can't think of a way to break it oneself. Don't be sloppy. Never set the rules aside because "this will never happen".</p>
+
+            <h3>Use POST requests when actions have side effects</h3>
+            <p>With GET requests, browsers are free to redo the request whenever they feel like it, for instance when the user pushes the 'back button' in his browser. That behaviour is not acceptable when the action taken makes something change, such as money transfers in a bank. Browsers are are not allowed to redo POST requests without first asking the user for permission.</p>
+
+            <h3>In a server-side context, there's no such thing as client-side security</h3>
+            <p>Anything coming from the client-side may have unexpected values. Even HTTP headers, cookies, hidden fields and option values may be controlled by the attacker. Client-side scripts can be bypassed or modified. Java Applets can be decompiled and replaced by other programs. Never trust data from the client.</p>
+
+            <h3>Never use the Referer header for authentication or authorisation</h3>
+            <p>The Referer header originates on the client-side and is thus under the control of the user. Attackers may easily change headers to circumvent security mechanisms. Also, many users instruct their browsers or proxies not to send Referer headers, as those headers may be seen as a threat to people's privacy.</p>
+
+            <h3>Always generate a new session ID once the user logs in</h3>
+            <p>Often, a session is generated as soon as someone visits a web site. And often, the session is given more privileges later on, for instance when the user actually logs in. It may be possible for an attacher to get hold of the sessio n ID as the user starts browsing the site, for instance through Session Fixation. The same session ID should not be used once the session is given more privileges.</p>
+
+            <h3>Never pass detailed error messages to the client</h3>
+            <p>First, error details may be very valuable as a source for knowledge of the inner workings of an application. Secondly, system error messages, detailed or not, are indications of weakness. An attacker that is able to provoke an error message knows that the system leaves handling of malformed input to other layers. He may get the impression that the system has a low guard and that his search for exploitable holes will go undetected.</p>
+
+            <h3>Identify every possible metacharacter to a subsystem</h3>
+            <p>Before passing data to a subsystem, make sure you know about all metacharacters. Note that similar subsystems from different vendors may do things slightly differently. Example: Some database servers give backslash characters inside string constants a special meaning, while others do not. Keep that in mind if a subsystem is replaced with another.</p>
+
+            <h3>Always handle metacharacters when passing data to subsystems</h3>
+            <p>Metacharacters cause problems whether they com from the remote user or from some internal part of the application. We should always handle metacharacters before passing data to a subsystem, no matter where the data comes from . If we fail to do so, we may not only experience strange error conditions, but also be vulnerable to second order injection attacks.</p>
+
+            <h3>When possible, pass data separate from control information</h3>
+            <p>If the subsystem we talk to supports data passing mechanisms that only allow data to be passed, we should use that mechanism to avoid metacharacter problems. Such mechanisms include prepared statements for SQL, DOM for XML and operating system pipes rather than command line arguments for external programs.</p>
+
+            <h3>Watch out for multi-level interpretation</h3>
+            <p>In some cases, what we see as the subsystem is just a path to another subsystem. Such as when we call a command shell to run an external program, or when we create an SQL string that will be used in a LIKE clause. The command shell and the SQL string need metacharacter handling. But the target program and the LIKE pattern matcher may need additional matacharacter handling.</p>
+
+            <h3>Strive for 'Defense in Depth'</h3>
+            <p>As neither humans nor technology work perfectly all the time, things tend to go wrong every now and then. When dealing with security, we should always look for an opportunity to add redundancy: a backup that may stop an attack if a security mechanism fails. Example: We do everything to avoid SQL Injection, but we should nevertheless configure the database server not to allow write access where it is not strictly needed. Just in case.</p>
+
+            <h3>Don't blindly trust the API documentation</h3>
+            <p>Unfortunately, some API documents may incorrectly give the impression that security is taken care of. If you see vague statements on, for example, the possible return values from a function, do not trust those statements. Do your own checks for validity.</p>
+
+            <h3>Identify all sources of input to the application</h3>
+            <p>Input may be far more than what the user types on the keyboard. Values from hidden fields, check boxes, radio buttons, select lists, submit buttons, cookies and HTTP headers may be manipulated by malicious users and used to make web applications misbehave if we forget to validate. Pay special attention to peculiar mechanisms in the programming platform, for instance mechanisms that let unexpected input override the expected input.</p>
+
+            <h3>Pay attention to the invisible security barrier: validate all input, always</h3>
+            <p>Make sure you have a thorough understanding of when data are on the server and when they are on the client. Data being sent from the server to the client and then back again have passed a barrier. On the server everything is presumably safe. On the client, it is not. The data may have been modified. Never trust data that have passed the invisible security barrier.</p>
+
+            <h3>When filtering, use whitelisting rather than blacklisting</h3>
+            <p>With whitelisting we have a list of intended good values, and filter everything that is not in that list. With blacklisting, we have alist of known bad values and filter those bad values, whilst keeping the rest. The problem with blacklisting is that we do not filter the set of unknown values. If our list is incomplete, for instance because a standard has evolved since we wrote our application, or because we did not think about all possible bad values, the application may be vulnerable to attacks.</p>
+
+            <h3>Do not massage invalid input to make it valid</h3>
+            <p>It is often hard to get things right. An attacker may be able to find a way around the massage, by crafting his attack in accordance with the massage algorithm. When invalid input is detected, there is no need to continue the operation. For invalid user-generated input, give an error message and ask the user to try again. For invalid server-generated input, give a simple error message and log the incident. Modified server-generated input is generally a sign of an attack.</p>
+
+            <h3>Create application-level logs</h3>
+            <p>The web server normally creates access logs that contain HTTP-level information on requests. These logs do not necessarily receal application-level attacks. The dynamic web application knows much more about the possible outcome of requests, about the validity of input parameters, about logged-in users and what they are allowed to do and so on, so the application should create its own log.</p>
+
+            <h3>Never use client-side scripts for security</h3>
+            <p>Scripts running in the users' browsers may easily be modified or disabled. Never use client-side scripts for validation, authorisation, authentication or any other security mechanism. Never hide passwords or other secrets in scripts that get passed to the client.</p>
+
+            <h3>When possible, use data indirection for server-generated input</h3>
+            <p>For server-generated input, such as data coming back from hidden fields, option tags and other elements not directly modifiable by the user, it is often a good idea to not reference resources directly, but rather name them using an index or a label. The indirection makes it harder to bypass authorisation tests.</p>
+
+            <h3>Pass as little internal state information as possible to the client</h3>
+            <p>Data passed to the client-side may be modified by an attacker before being returned. It is often hard to remember to revalidate the data, so it is better not to send the data at all if possible. Use server-side storage, such as session objects.</p>
+
+            <h3>Do not assume that requests will come in a certain order</h3>
+            <p>An attacker may skip a request and jump directly to the one that normally follows. He may jump back and redo a previous request. Applications that assume a certain order of requests may, in some cases, be vulnerable to both input manipulation attacks, authentication attacks and authorisation bypassing.</p>
+
+            <h3>Filter all data before including them in a web page, no matter the origin</h3>
+            <p>To prevent all kinds of Cross-site Scripting attacks, every piece of fata that is not supposed to contain markup should be passed through some HTML Encoding filter before being included in the final web page. If possible, this filtering should be done automatically.</p>
+
+            <h3>Stick to existing cryptographic algorithms, do not create your own</h3>
+            <p>Existing cryptographic algorithms contain some heavy maths, and they have withstood several years of scrutiny from the top experts in the world. If you need to encrypt anything, use one of the the established algorithms. Unless you are a cryptologist, chances are that your home-grown encryption scheme will be broken in minutes by anyone familiar with the toolbox of the cryptanalysts.</p>
+
+            <h3>Never store clear-text passwords</h3>
+            <p>People tend to use the same password for many things. If an attacker gets access to the user passwords from your site, he may try the same user name/password combinations at other, more serious sites. Avaiod leaking passwords, even if the worst thing happens. Store hashed passwords only.</p>
+
+            <h3>Never use GET for secret data, including session IDs</h3>
+            <p>Parameters to GET requests may end up in Referer headers sent by the browsers. It is often hard to control where those referer headers are going, so you risk leaking secret stuff to untrusted servers. GET parameters will also be seen in web server and proxy logs, and they will be available in the browser's history.</p>
+
+            <h3>Assume that server-side code is available to attackers</h3>
+            <p>There are many ways for an attacker to gain access to server-side code, some of which are outside the control of the programmer. We should try not to base the security of the application on the secrecy of our code. Note that compiling or otherwise obfuscating the code will not stop the determined attacker: Any code that is to be interpreted by machines may also be interpreted by humans.</p>
+
+            <h3>Security is not a product; it's a process</h3>
+            <p>We cannot tack security on at the end. And we cannot leave it to the administrators. Our code may be abused in many ways, so for every line of code we write, we need to ask: "How can this line be abused?" and "How should I solve this problem in order not to please the attackers?" We must deal with security throughout the entire development process. Fortunately, as soon as we get used to it, it won't take much extra time.</p>
 
             <hr class="docs-hr">
 
