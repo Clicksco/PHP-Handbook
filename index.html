@@ -197,31 +197,59 @@
             </p>
 
             <h3>Github Flow Overview</h3>
-            <p>The standard workflow using Github Flow is performed using merge/pull requests and ties in nicely to any automated deployment or Continuous Integration. The main highlights are:</p>
+            <p>Github Flow is a way of working with Git that focusses on collaboration and quick releases and has been demonstrated to grow well with large teams.</p>
+            <p>The only hard rule of the system, and the main thing to remember, is that anything on the <code>master</code> branch is deployable. This means that it should never be broken or partially complete.</p>
 
-            <ul>
-                <li>Anything on master is deployable</li>
-                <li>New features or hotfixes are branched from master</li>
-                <li>Merge requests are a great opportunity for peer-review and don't necessarily indicate completion</li>
-            </ul>
-
-            <h3>Example</h3>
-            <p>A new feature is required for an existing project that uses Github Flow. Here's how it should pan out:</p>
-
+            <h4>An Example Workflow</h4>
             <ol>
-                <li>The master branch is checked out and brought up-to-date.</li>
-                <li>A new branch is forked from master. This should be named descriptively, for example: improved-widget-model, registration-hotfix.</li>
-                <li>Changes are made, files deleted, tests are written and the branch is worked until we're happy with what we have.</li>
-                <li>A new merge/pull request is sent to the origin repository and an overview of the changes made. Anyone else that is on the project now has the opportunity to review and contribute.</li>
-                <li>The branch can be continued to be worked on and any changes pushed back to origin, automatically updating the merge request.</li>
-                <li>Once satisfactory, the merge request can be completed and master is updated.</li>
+                <li>Fork a descriptive branch from <code>master</code></li>
+                <li>Create Awesome</li>
+                <li>Pull request, review and merge</li>
+                <li>Deploy</li>
+                <li>Rinse and repeat</li>
             </ol>
 
-            <h2>.gitignore</h2>
+            <p>Let's look at each in a little more detail...</p>
 
-            <p>
-                A standard .gitignore example is shown below. Please make sure to ignore all editor/IDE settings etc.
-            </p>
+            <h4>1. Fork a Descriptive Branch from <code>master</code></h4>
+            <p>Everything comes from <code>master</code>, it's stable, safe and a representation of the current live system.</p>
+
+            <p>Branches should be based on a description of the new feature or work that you're doing. It makes things easy to read at a glance and, for larger teams, makes it clear as to what everyone is/has been working on.</p>
+
+            <p>Some examples might be:</p>
+
+            <ul>
+                <li><code>landing-page-content</code></li>
+                <li><code>hotfix-email-notifications</code></li>
+                <li><code>user-authentication</code></li>
+                <li><code>profit-reporting</code></li>
+            </ul>
+
+            <p>Once created, push your new branch to the remote.</p>
+
+            <h4>2. Create awesome</h4>
+            <p>Do what you do, my friend. Squash bugs, add features, make the world better one line of code at a time.</p>
+            <p>Commit to your branch locally and regularly push to your remote copy.</p>
+
+            <h4>3. Pull request, review and merge</h4>
+            <p>Once you feel like the branch is ready for deployment, open a pull request on the remote. Where applicable, tag someone in it, possibly a developer responsible for reviewing and signing off the feature.</p>
+
+            <p>Review the code, go back and make changes if you need to. Any further pushes to the remote branch will update the pull request/sup>. (If you need a fix that has since been merged into <code>master</code>, you can always merge it into your feature branch.)</p>
+
+            <p>Peer review and/or sign-off isn't always required. If it's a rapid fix, or you're working on your own, just up and merge it yourself. That's not to say that you won't want to run something past someone; and merge requests are a great way to do that!</p>
+
+            <p>When satisfied, complete the merge to <code>master</code>.</p>
+
+            <h4>4. Deploy</h4>
+            <p>Where possible, <code>master</code> should be hooked up to a Continuous Integration system like <a href="http://jenkins-ci.org/">Jenkins</a> or, more simply, <a href="http://deployhq.com/">Deploy</a> or <a href="http://ftploy.com/">FTPloy</a>. If this isn't feasible for your project, you can deploy as you see fit.</p>
+
+            <h4>5. Rinse &amp; repeat</h4>
+            <p>What? You thought you were finished? GOTO 10.</p>
+
+            <hr>
+
+            <h2>.gitignore</h2>
+            <p>A standard .gitignore example is shown below. Please make sure to ignore all editor/IDE settings etc.</p>
 
             <pre>
 .idea
