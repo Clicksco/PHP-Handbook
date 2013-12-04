@@ -1,4 +1,4 @@
-#PHP-Best-Practice
+#PHP Handbook
 
 There is nothing to see on the master branch.
 
