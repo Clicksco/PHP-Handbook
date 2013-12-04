@@ -1,2 +1,2 @@
-PHP-Best-Practice
+PHP-Handbook
 =================
