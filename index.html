@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Clicksco PHP Handbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body data-spy="scroll" data-target="#main-navigation">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div data-spy="affix" data-offset-top="1">
+                <img class="logo" src="img/php-logo.png" alt="" width="250"/>
+                <hr />
+                <ul class="nav nav-pills nav-stacked" id="main-navigation">
+                    <li><a href="#standards">Standards</a></li>
+                    <li><a href="#team">The Team</a></li>
+                    <li><a href="#communication">Communication</a></li>
+                    <li><a href="#version-control">Version Control</a></li>
+                    <li><a href="#project-management">Project Management</a></li>
+                    <li><a href="#frameworks">Frameworks</a></li>
+                    <li><a href="#editors">Editors</a></li>
+                    <li><a href="#coding-style">Coding Style</a></li>
+                    <li><a href="#composer">Composer</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#local-development">Local Development</a></li>
+                    <li><a href="#continuous-integration">Continuous Integration</a></li>
+                    <li><a href="#documentation">Documentation</a></li>
+                    <li><a href="#bdd">Behaviour Driven Development</a></li>
+                    <li><a href="#links">Useful Links & Tools</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>PHP Handbook</h1>
+                    <p>
+                        Our aim it to pull PHP developers together to work using the same tools and the same way. We believe that ensuring that having some best-practice and basic principles in place will play a big part in both team and personal development.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Getting started  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1>Getting started</h1>
+            </div>
+
+            <p>
+                Before doing anything else make yourself a cup of tea and read everythign on <a href="http://www.phptherightway.com/">PHP The Right Way</a>.
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- Standards - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="standards">Standards</h1>
+            </div>
+
+            <h2>Introduction</h2>
+
+            <p>
+                The key words "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED" and "OPTIONAL" in this document are to be interpreted as described in
+                <a href="http://tools.ietf.org/html/rfc2119">RFC 2119</a>.
+            </p>
+
+            <h2>Out Standards</h2>
+
+            <ol>
+                <li>You <span class="highlight">Should</span> use the <a href="http://php.clicksco.com/#frameworks">Laravel</a> framework</li>
+                <li>You <span class="highlight">Must</span> comply with the company <a href="http://php.clicksco.com/#coding-style">Coding Style</a></li>
+                <li>You <span class="highlight">Should</span> use <a href="http://php.clicksco.com/#composer">Composer</a> for all autoloading</li>
+
+                <li>You <span class="highlight">Should</span> use $snake_case for properties, variables &amp; parameters</li>
+                <li>You <span class="highlight">Must</span> use the Clicksco namespace for all packages</li>
+                <li>You <span class="highlight">Must</span> use an appropriate namespace for your project</li>
+            </ol>
+
+            <hr class="docs-hr">
+
+            <!-- Team - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="team">The Team</h1>
+            </div>
+
+            <h2>Team Members</h2>
+
+            <p>
+                The below list is a quick list of the Clicksco PHP team. Clicking on a name will take you to the official Tech Team Who's Who page on the Clickso company wiki.
+            </p>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th width="18"></th>
+                        <th width="240">Name</th>
+                        <th>Team</th>
+                        <th width="120">Location</th>
+                        <th width="175">Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/47360bd89ca5e4ef1d276e145d7eae08?s=18" /></td>
+                        <td>Dmitrii Shumkov (aka Dima)</td>
+                        <td>ClicksControl</td>
+                        <td>Russia</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/dmitrii-shumkov">GitHub</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/6ec973cd982a5d84c6a5dbbeb105b849?s=18" /></td>
+                        <td>Viacheslav Epifanov (aka Slava)</td>
+                        <td>ClicksControl</td>
+                        <td>Russia</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/slava-epifanov">GitHub</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/none?s=18" /></td>
+                        <td>Philippe Jausions</td>
+                        <td>Lead Developer Click.net</td>
+                        <td>France</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/jausions">GitHub</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/none?s=18" /></td>
+                        <td>Ruslan Kazantsev</td>
+                        <td>ClicksControl</td>
+                        <td>Russia</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/ruslan-kazantsev">GitHub</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/36bc5df25af8da3b8ce99d809932948d?s=18" /></td>
+                        <td>Elliot Lings</td>
+                        <td>PHP Developer</td>
+                        <td>UK</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/elliotlings">GitHub</a>
+                                <a class="btn btn-default" href="http://twitter.com/elliotlings">Twitter</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/36bc5df25af8da3b8ce99d809932948d?s=18" /></td>
+                        <td>James Mills</td>
+                        <td>Lead Developer Local/Services</td>
+                        <td>Dubai</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/jamesmills">GitHub</a>
+                                <a class="btn btn-default" href="http://twitter.com/jamesmills">Twitter</a>
+                                <a class="btn btn-default" href="https://geekli.st/jamesmills">Geekli.st</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/none?s=18" /></td>
+                        <td>Andrew Nicholson</td>
+                        <td>Lead Developer CPA/Shopping</td>
+                        <td>UK</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/agdnicholson">GitHub</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/ad21fe18a7e38ca219e83aad26cf54dc?s=18" /></td>
+                        <td>Jon Park</td>
+                        <td>Full Stack Developer</td>
+                        <td>UK</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/jonspark">GitHub</a>
+                                <a class="btn btn-default" href="http://twitter.com/jonspark">Twitter</a>
+                                <a class="btn btn-default" href="https://geekli.st/jonspark">Geekli.st</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/none?s=18" /></td>
+                        <td>Alexey Polushin</td>
+                        <td>ClicksControl</td>
+                        <td>Russia</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/alexey-polushin">GitHub</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/90ab896baf92ff2b1739a54fcc0119b5?s=18" /></td>
+                        <td>Evgeny Stepanov</td>
+                        <td>ClicksControl</td>
+                        <td>Russia</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/4a1791ce7ed9c141e3cda25787d6a5ec?s=18" /></td>
+                        <td>Paul Taylor</td>
+                        <td>Junior Developer CRM</td>
+                        <td>UK</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/ampersarnie">GitHub</a>
+                                <a class="btn btn-default" href="http://twitter.com/ampersarnie">Twitter</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/4f450f04ec2f3281ed3bdef018af8cf0?s=18" /></td>
+                        <td>Rick Trotter</td>
+                        <td>Lead Developer CRM</td>
+                        <td>UK</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/gingercoder">GitHub</a>
+                                <a class="btn btn-default" href="http://twitter.com/tskynet">Twitter</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/none?s=18" /></td>
+                        <td>Alexander Trunov (aka Sasha)</td>
+                        <td>ClicksControl</td>
+                        <td>Russia</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/Alexander-trunov">GitHub</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.gravatar.com/avatar/124a66d76ec64585326adc4fb38ec271?s=18" /></td>
+                        <td>Usman Zafar</td>
+                        <td>Developer Click.net</td>
+                        <td>Dubai</td>
+                        <td>
+                            <div class="btn-group btn-group-xs">
+                                <a class="btn btn-default" href="https://github.com/usmanzafar">GitHub</a>
+                                <a class="btn btn-default" href="http://twitter.com/djzaf">Twitter</a>
+                                <a class="btn btn-default" href="https://geekli.st/djzaf">Geekli.st</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr class="docs-hr">
+
+            <!-- Communication  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="communication">Communication</h1>
+            </div>
+
+            <p>
+                Communication and collaboration are key! Don't be a hermit, talk to each other!
+            </p>
+
+            <ul>
+                <li><a href="https://clicksco.hipchat.com">HipChat</a> - we have rooms for all projects and use every integration possable with other services so that notifications like Exceptions and deployments are send to the project rooms.</li>
+                <li><a href="https://basecamp.com/1768945/projects/3731035-clicksco-php">Basecamp</a> - We have a Clicksco PHP project to discuss all things PHP.</li>
+                <li><a href="http://screenhero.com ">ScreenHero</a> - Collaboration is key. <a href="http://en.wikipedia.org/wiki/Pair_programming">Pair Programming</a> is a great and encoraged.</li>
+            </ul>
+
+            <hr class="docs-hr">
+
+            <!-- Version Control  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="version-control">Version Control</h1>
+            </div>
+
+            <p>All projects must use version control. At Clicksco we use Git.</p>
+
+            <h2>Workflow</h2>
+            <p>
+                The workflow of choice for the PHP team at Clicksco is <em>Github Flow</em>.
+            </p>
+            <ul>
+                <li>
+                    <a href="http://scottchacon.com/2011/08/31/github-flow.html">Full overview by Scott Chacon (including benefits over traditional <em>Git Flow</em>)</a>
+                </li>
+                <li>
+                    <a href="http://guides.github.com/overviews/flow/">Understanding the GitHub Workflow by GitHub Guides</a>
+                </li>
+            </ul>
+
+            <h3>Github Flow Overview</h3>
+            <p>Github Flow is a way of working with Git that focusses on collaboration and quick releases and has been demonstrated to grow well with large teams.</p>
+            <p>The only hard rule of the system, and the main thing to remember, is that anything on the <code>master</code> branch is deployable. This means that it should never be broken or partially complete.</p>
+
+            <h4>An Example Workflow</h4>
+            <ol>
+                <li>Fork a descriptive branch from <code>master</code></li>
+                <li>Create Awesome</li>
+                <li>Pull request, review and merge</li>
+                <li>Deploy</li>
+                <li>Rinse and repeat</li>
+            </ol>
+
+            <p>Let's look at each in a little more detail...</p>
+
+            <h4>1. Fork a Descriptive Branch from <code>master</code></h4>
+            <p>Everything comes from <code>master</code>, it's stable, safe and a representation of the current live system.</p>
+
+            <p>Branches should be based on a description of the new feature or work that you're doing. It makes things easy to read at a glance and, for larger teams, makes it clear as to what everyone is/has been working on.</p>
+
+            <p>Some examples might be:</p>
+
+            <ul>
+                <li><code>landing-page-content</code></li>
+                <li><code>hotfix-email-notifications</code></li>
+                <li><code>user-authentication</code></li>
+                <li><code>profit-reporting</code></li>
+            </ul>
+
+            <p>Once created, push your new branch to the remote.</p>
+
+            <h4>2. Create awesome</h4>
+            <p>Do what you do, my friend. Squash bugs, add features, make the world better one line of code at a time.</p>
+            <p>Commit to your branch locally and regularly push to your remote copy.</p>
+
+            <h4>3. Pull request, review and merge</h4>
+            <p>Once you feel like the branch is ready for deployment, open a pull request on the remote. Where applicable, tag someone in it, possibly a developer responsible for reviewing and signing off the feature.</p>
+
+            <p>Review the code, go back and make changes if you need to. Any further pushes to the remote branch will update the pull request/sup>. (If you need a fix that has since been merged into <code>master</code>, you can always merge it into your feature branch.)</p>
+
+            <p>Peer review and/or sign-off isn't always required. If it's a rapid fix, or you're working on your own, just up and merge it yourself. That's not to say that you won't want to run something past someone; and merge requests are a great way to do that!</p>
+
+            <p>When satisfied, complete the merge to <code>master</code>.</p>
+
+            <h4>4. Deploy</h4>
+            <p>Where possible, <code>master</code> should be hooked up to a Continuous Integration system like <a href="http://jenkins-ci.org/">Jenkins</a> or, more simply, <a href="http://deployhq.com/">Deploy</a> or <a href="http://ftploy.com/">FTPloy</a>. If this isn't feasible for your project, you can deploy as you see fit.</p>
+
+            <h4>5. Rinse &amp; repeat</h4>
+            <p>What? You thought you were finished? GOTO 10.</p>
+
+            <hr>
+
+            <h2>.gitignore</h2>
+            <p>A standard .gitignore example is shown below. Please make sure to ignore all editor/IDE settings etc.</p>
+
+            <pre>
+.idea
+vendor
+.DS_Store
+.vagrant
+            </pre>
+
+            <hr class="docs-hr">
+
+            <!-- Project Management - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="project-management">Project Management</h1>
+            </div>
+
+            <p>
+                There are several tools available to help you manage your projects. The main two are <a href="https://basecamp.com/">Basecamp</a> and <a href="http://www.codebasehq.com/">Codebase</a>.
+            </p>
+
+            <h2>Basecamp</h2>
+            <p>
+                All projects at Clicksco have a Basecamp project assigned to them. Basecamp is a great way to communicate with project leads, project managers and other developers about top-level discussions. It's the prefered method of communication.
+            </p>
+
+            <p>
+                It's good practice to manage a top level to-do list in Basecamp which is understandable and readable by everyone. You can then reference which ticket this work refrences in Codebase by adding [Ticket 44] to the title.
+            </p>
+
+            <h2>Codebase</h2>
+            <p>
+                The Clicksco PHP team has access to our company Codebase account. Codebase is a great place for more technical discussions within your project team. The ticketing system must be used to manage all feature requests, bugs, enhancements etc. Each project that is managed by Codebase will have it's own repository which should be kept up to date.
+            </p>
+
+            <p>You should have two remotes setup.</p>
+            <ul>
+                <li>origin - This should be your Codebase repo</li>
+                <li>bitbucket - This should be a BitBucket repo in the Clicksco account</li>
+            </ul>
+
+            <p>
+                When you make a commit you can reference tickets in your commit and when it is pushed to Codebase it will automatically update ticket status etc.
+                <a href="http://support.codebasehq.com/articles/tips-tricks/linking-commits-with-tickets">Read more about this</a>.
+            </p>
+
+            <h3>Codebase Quick Tips</h3>
+
+            <p>Updating Your Ticket</p>
+            <pre>
+[touch: ticketnumber]
+e.g. [touch: 10]</pre>
+
+            <p>Changing the Status</p>
+            <pre>
+[statusname: ticketnumber]
+e.g. [completed: 10]</pre>
+
+
+            <hr class="docs-hr">
+
+            <!-- Frameworks  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="frameworks">Frameworks</h1>
+            </div>
+
+            <p>
+                For every new project a short team discussion will take place to make sure the right Framework will be implemented. The default/standard framework is currently <a href="http://laravel.com/">Laravel</a>.
+            </p>
+
+            <p>
+                As a team we understand that each project is different with different requirements which may not fit in with the standard framework of choice.
+                We also understand that as a large team of developers as part of a international company it is sensible to have a certain about of standardisation when it comes to tools and processes.
+                Because of this we discuss each projects requirements together before a new project is started to make sure the correct tools are used.
+                We are open to assessing new frameworks and have an internal process for this.
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- Editors  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="editors">Editors</h1>
+            </div>
+
+            <p>
+                A developer is open to use whichever editor they want. Every developer has access to a <a href="http://www.jetbrains.com/phpstorm/">PHP Storm</a> licence if they want and this is the more widely used IDE within the group.
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- Coding Style  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="coding-style">Coding Style</h1>
+            </div>
+
+            <p>
+                As we don't believe in wasting time reinventing the wheel, the Clickco PHP team follow the great work by the <a href="http://www.php-fig.org">PHP Framework Interop Group (PHP-FIG)</a> and follow the various PSR's (PHP Standards Recommendation).
+                A great article explaining what this is all about can be read here <a href="http://net.tutsplus.com/tutorials/php/psr-huh/">PSR-Huh?</a>.
+            </p>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0 Autoloading Standard</a>
+                </li>
+                <li>
+                    <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1 Basic Coding Standard</a>
+                </li>
+                <li>
+                    <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2 Coding Style Guide</a>
+                </li>
+            </ul>
+
+            <p>
+                There are a number of tools to help you stick to our chosen coding standard (coding style). One of those tools is called
+                <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>, which validates your code for consistence with PSR. You can use this tool via the command line or set PHPStorm to use this to highlight errors in the IDE as you type.
+                <a href="http://jamesmills.co.uk/screen/2013-08-15_0926.swf">Setting up PHPStorm and PHP_CodeSniffer, checkout this quick video</a>.
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- Composer - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="composer">Composer</h1>
+            </div>
+
+            <p>
+                <a href="http://getcomposer.org/">Composer</a> is a tool for dependency management in PHP. It allows you to declare the dependent libraries your project needs and it will install them in your project for you.
+            </p>
+
+            <p>
+                Every project should make use of Composer and this is the standard way of setting up autoloading in projects.
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- Packages - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="packages">Packages</h1>
+            </div>
+
+            <p>
+                You should always do a search on <a href="https://packagist.org/">Packagist</a> and also our company package directory before you work on a new package. Before writing new functionality for your project take a step back and discuss with the team if what you are working on should be a package so we can all make use of it.
+            </p>
+
+            <h2>Internal package directory</h2>
+
+            <span class="label label-default">Work in progress...</span>
+
+            <hr class="docs-hr">
+
+            <!-- Local Development - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="local-development">Local Development</h1>
+            </div>
+
+            <p>
+                The best way to get a local development environment setup is to use Virtualbox and Vagrant.
+            </p>
+
+            <p>
+                We are working on a base box to match the companies live environments. <a href="https://github.com/Clicksco/ubuntu-in-a-box">A temporary setup can be found on our GitHub page</a>. Another great resource is
+                <a href="https://puphpet.com/">puphpet.com</a>, a simple GUI to set up virtual machines for PHP development.
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- Continuous Integration - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="continuous-integration">Continuous Integration</h1>
+            </div>
+
+            <span class="label label-default">Work in progress...</span>
+
+            <hr class="docs-hr">
+
+            <!-- Documentation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="documentation">Documentation</h1>
+            </div>
+
+            <p>
+                Every project should include DocBlocks. <a href="http://www.phpdoc.org/docs/latest/for-users/phpdoc/basic-syntax.html#what-is-a-docblock">What is a docblock?</a>
+            </p>
+
+            <hr class="docs-hr">
+
+            <!-- BDD - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="bdd">Behaviour Driven Development</h1>
+            </div>
+
+            <span class="label label-default">Work in progress...</span>
+
+            <hr class="docs-hr">
+
+            <!-- Useful Links &amp; Tools - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div class="page-header">
+                <h1 id="links">Useful Links &amp; Tools</h1>
+            </div>
+
+            <p>
+                A few useful links can be found below:
+            </p>
+
+            <h2>Development</h2>
+            <ol>
+                <li>
+                    <a href="http://www.sequelpro.com/">Sequel Pro</a>
+                    - fast, easy-to-use Mac database management application for working with MySQL databases.
+                </li>
+                <li>
+                    <a href="http://www.sourcetreeapp.com/">SourceTree</a>
+                    - SourceTree is a free Mac client for Git
+                </li>
+            </ol>
+            
+            <h2>Screencasts</h2>
+            <ol>
+                <li>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    - A great set of screen casts covering all things Laravel
+                </li>
+            </ol>
+
+            <h2>Podcasts</h2>
+            <ol>
+                <li>
+                    <a href="http://laravel.io/topic/25/laravelio-podcast-episode-1-laravel-4-becomes-official-and-laracon-eu-2013">Laravel.io</a>
+                    - A great podcast covering all sorts of Laravel goodness.
+                </li>
+                <li>
+                    <a href="http://phptownhall.com">PHP Town Hall</a>
+                    - General PHP podcast. Good to pick up new things in the industry.
+                </li>
+            </ol>
+
+            <h2>Books</h2>
+            <ol>
+                <li>
+                    <a href="https://leanpub.com/codebright%20">Laravel: Code Bright</a>
+                </li>
+                <li>
+                    <a href="https://leanpub.com/laravel-testing-decoded">Laravel Testing Decoded</a>
+                </li>
+                <li>
+                    <a href="https://leanpub.com/laravel">Laravel: From Apprentice To Artisan</a>
+                </li>
+            </ol>
+
+            <hr class="docs-hr">
+
+            <p>Copyright 2013 Clicksco. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(
+            function() {
+                $('body').scrollspy({ target: '#main-navigation' })
+            }
+    );
+
+    $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this).scrollspy('refresh')
+    });
+</script>
+</body>
+</html>
