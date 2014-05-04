@@ -514,9 +514,22 @@ e.g. [completed: 10]</pre>
                 You should always do a search on <a href="https://packagist.org/">Packagist</a> and also our company package directory before you work on a new package. Before writing new functionality for your project take a step back and discuss with the team if what you are working on should be a package so we can all make use of it.
             </p>
 
+            <p>
+                Another good place to check for well built packages is <a href="http://thephpleague.com/">The League of Extraordinary Packages</a>.
+            </p>
+
             <h2>Internal package directory</h2>
 
-            <span class="label label-default">Work in progress...</span>
+            <p>
+                We have an internal Composer Repository powered by Satis, we call this Clickagist. All internal packages should be hosted on the company BitBucket account.
+            </p>
+
+            <h3>Adding your own package</h3>
+
+            <p>
+                If you would like to add your package to the directory then make sure that you have an up-to-date composer.json commited. Then just add a reference to your repository to
+                <a href="https://bitbucket.org/Clicksco/packages/src/6a5683d90371032e1f7c531a905542bb5d02b90e/satis.json?at=master">the packages repo on BitBucket</a>. Once you push to master Codeship will take care of the rest.
+            </p>
 
             <hr class="docs-hr">
 
