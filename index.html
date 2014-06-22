@@ -409,11 +409,9 @@ vendor
                 The Clicksco PHP team has access to our company Codebase account. Codebase is a great place for more technical discussions within your project team. The ticketing system must be used to manage all feature requests, bugs, enhancements etc. Each project that is managed by Codebase will have it's own repository which should be kept up to date.
             </p>
 
-            <p>You should have two remotes setup.</p>
-            <ul>
-                <li>origin - This should be your Codebase repo</li>
-                <li>bitbucket - This should be a BitBucket repo in the Clicksco account</li>
-            </ul>
+            <p>
+                Codebase repositories will have an automatic secondary backup to a repository on the company BitBucket account. This is managed in the settings in Codebase.
+            </p>
 
             <p>
                 When you make a commit you can reference tickets in your commit and when it is pushed to Codebase it will automatically update ticket status etc.
@@ -461,6 +459,16 @@ e.g. [completed: 10]</pre>
             <p>
                 A developer is open to use whichever editor they want. Every developer has access to a <a href="http://www.jetbrains.com/phpstorm/">PHP Storm</a> licence if they want and this is the more widely used IDE within the group.
             </p>
+
+            <ul>
+                <li>
+                    <a href="https://github.com/barryvdh/laravel-ide-helper">Laravel IDE Helper by Barry vd. Heuvel</a>
+                    (<a href="https://gist.github.com/barryvdh/5227822">_ide_helper.php</a>)
+                </li>
+                <li>
+                    <a href="https://laracasts.com/series/how-to-be-awesome-in-phpstorm">How to be awesome in PHPStorm - Laracasts Series</a>
+                </li>
+            </ul>
 
             <hr class="docs-hr">
 
@@ -520,7 +528,13 @@ e.g. [completed: 10]</pre>
 
             <h2>Internal package directory</h2>
 
-            <span class="label label-default">Work in progress...</span>
+            <p>We have a number of packages that are located on our internal Composer Repository whcih is powered by Satis.</p>
+
+            <ul>
+                <li>
+                    <a href="http://packages.clicksco.com/">Clicksco Packagist</a>
+                </li>
+            </ul>
 
             <hr class="docs-hr">
 
@@ -530,12 +544,19 @@ e.g. [completed: 10]</pre>
             </div>
 
             <p>
-                The best way to get a local development environment setup is to use Virtualbox and Vagrant.
+                The best way to get a local development environment setup is to use <a
+                        href="https://www.virtualbox.org/">VirtualBox</a> and <a href="http://www.vagrantup.com/">vagrant</a>.
             </p>
 
             <p>
                 We are working on a base box to match the companies live environments. <a href="https://github.com/Clicksco/ubuntu-in-a-box">A temporary setup can be found on our GitHub page</a>. Another great resource is
                 <a href="https://puphpet.com/">puphpet.com</a>, a simple GUI to set up virtual machines for PHP development.
+            </p>
+
+            <h2>Laravel Homestead</h2>
+
+            <p>
+                More recently <a href="https://twitter.com/taylorotwell">Taylor Otwell</a> has released <a href="http://laravel.com/docs/homestead">Homestead</a>. It is definatly checking this out.
             </p>
 
             <hr class="docs-hr">
@@ -545,7 +566,9 @@ e.g. [completed: 10]</pre>
                 <h1 id="continuous-integration">Continuous Integration</h1>
             </div>
 
-            <span class="label label-default">Work in progress...</span>
+            <p>
+                Continuous Integration is managed using <a href="https://www.codeship.io">Codeship</a>. This is a great service which runs tests and deployments. This is our prefered method of deployment.
+            </p>
 
             <hr class="docs-hr">
 
@@ -616,7 +639,7 @@ e.g. [completed: 10]</pre>
 
             <hr class="docs-hr">
 
-            <p>Copyright 2013 Clicksco. All rights reserved.</p>
+            <p>Copyright 2014 Clicksco. All rights reserved.</p>
         </div>
     </div>
 </div>
